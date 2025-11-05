@@ -42,6 +42,7 @@ plugins:
   - jekyll-link-attributes
   - jekyll-paginate-v2
   - jekyll-regex-replace
+  - jekyll/scholar
   - jekyll-sitemap
   - jekyll-tabs
   - jekyll-toc
@@ -58,6 +59,21 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
+  sort_by: year, month
+  order: descending
+
+# Collection for blog posts
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    defaults:
+      layout: project
+    output: true
+    permalink: /projects/:path/
 
 # Output
 permalink: /blog/:year/:title/
