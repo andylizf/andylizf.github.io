@@ -57,6 +57,7 @@ plugins:
   - jekyll-tabs
   - jekyll-toc
   - jekyll-twitter-plugin
+  - jekyll-scholar
   - jemoji
 
 # SASS
@@ -71,6 +72,15 @@ scholar:
   bibliography_template: bib
   sort_by: year, month
   order: descending
+  
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
 
 # Collections
 collections:
