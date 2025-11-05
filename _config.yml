@@ -1,0 +1,71 @@
+# -----------------------------------------------------------------------------
+# Basic site settings
+# -----------------------------------------------------------------------------
+
+title: "" # leave empty to use full name
+first_name: Zhifei (Andy)
+middle_name: 
+last_name: Li
+
+url: https://andylizf.github.io
+baseurl: "" # user site at root
+
+# Emoji favicon or custom image in assets/img/
+icon: "⚛️"
+
+# Description for SEO
+description: >
+  Machine Learning Systems and Cloud Computing. Minimal, fast academic profile.
+
+# Theme
+remote_theme: alshedivat/al-folio@v0.14.6
+
+# Locale & language
+lang: en
+
+# Navbar / footer
+navbar_fixed: true
+footer_fixed: true
+search_enabled: true
+
+# Plugins used by al-folio
+plugins:
+  - jekyll-archives-v2
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll/scholar
+  - jekyll-sitemap
+  - jekyll-tabs
+  - jekyll-terser
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+# SASS
+sass:
+  style: compressed
+
+# Scholar (publications)
+scholar:
+  locale: en
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+
+# Output
+permalink: /blog/:year/:title/
+
+# Exclude
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile.lock
+
