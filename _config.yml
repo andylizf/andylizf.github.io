@@ -69,3 +69,4 @@ exclude:
   - node_modules
   - vendor
   - Gemfile.lock
+  - old_content_backup
