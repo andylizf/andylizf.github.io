@@ -79,15 +79,24 @@ collections:
     output: true
     permalink: /:path/
   news:
-    defaults:
-      layout: post
     output: true
     permalink: /news/:path/
   projects:
-    defaults:
-      layout: project
     output: true
     permalink: /projects/:path/
+
+# Defaults for front matter
+defaults:
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 
 # Output
 permalink: /blog/:year/:title/
