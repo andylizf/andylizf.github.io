@@ -1,6 +1,6 @@
 ---
-layout: about
-title: about
+layout: default
+title: About
 permalink: /
 subtitle: >
   Visiting Student Researcher @ UC Berkeley Sky Computing Lab · Senior CS undergrad @ Renmin University of China. AI Systems, Cloud Computing, and Operating Systems.
