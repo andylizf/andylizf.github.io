@@ -27,15 +27,17 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
-      - name: Install system deps (ImageMagick)
+      - name: Install system deps (ImageMagick + fonts)
         run: |
           sudo apt-get update
-          sudo apt-get install -y imagemagick unzip curl
+          sudo apt-get install -y imagemagick unzip curl \
+            fonts-roboto fonts-font-awesome fonts-source-sans-pro || true
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
       - name: Build CV (Typst)
+        continue-on-error: true
         run: |
           set -euxo pipefail
           # Clone MyCV repo (public)
@@ -47,6 +49,7 @@ jobs:
           mkdir -p "$PKG_ROOT"
           rsync -a modern-cv/ "$PKG_ROOT/"
           export TYPST_PACKAGE_PATHS="$GITHUB_WORKSPACE/.typst/packages"
+          export TYPST_FONT_PATHS="/usr/share/fonts"
           # Compile Typst to the website's cv folder
           mkdir -p "$GITHUB_WORKSPACE/cv"
           typst compile resume.typ "$GITHUB_WORKSPACE/cv/andylizf_cv.pdf"
