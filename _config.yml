@@ -73,8 +73,11 @@ scholar:
   sort_by: year, month
   order: descending
 
-# Collection for blog posts
+# Collections
 collections:
+  pages:
+    output: true
+    permalink: /:path/
   news:
     defaults:
       layout: post
