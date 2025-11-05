@@ -30,6 +30,7 @@ search_enabled: true
 
 # Plugins used by al-folio
 plugins:
+  - jekyll-remote-theme
   - jekyll-archives-v2
   - jekyll-email-protect
   - jekyll-feed
@@ -68,4 +69,3 @@ exclude:
   - node_modules
   - vendor
   - Gemfile.lock
-

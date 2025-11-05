@@ -36,7 +36,7 @@ jobs:
       - name: Install system deps (ImageMagick)
         run: |
           sudo apt-get update
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y imagemagick unzip curl
           pip3 install --upgrade nbconvert
 
       - name: Setup Typst
@@ -49,17 +49,13 @@ jobs:
           git clone --depth 1 https://github.com/andylizf/MyCV.git MyCV
           cd MyCV
           git submodule update --init --recursive || true
-          # Fetch fonts locally
-          FONTS_DIR="$GITHUB_WORKSPACE/.fonts"
-          mkdir -p "$FONTS_DIR/roboto" "$FONTS_DIR/source-sans-pro" "$FONTS_DIR/font-awesome"
-          curl -L "https://fonts.google.com/download?family=Roboto" -o "$FONTS_DIR/roboto.zip"
-          unzip -o "$FONTS_DIR/roboto.zip" -d "$FONTS_DIR/roboto" && rm "$FONTS_DIR/roboto.zip"
-          curl -L "https://github.com/adobe-fonts/source-sans-pro/archive/refs/tags/3.046R.zip" -o "$FONTS_DIR/source-sans.zip"
-          unzip -o "$FONTS_DIR/source-sans.zip" -d "$FONTS_DIR/source-sans-pro" && rm "$FONTS_DIR/source-sans.zip"
-          curl -L "https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-desktop.zip" -o "$FONTS_DIR/fontawesome.zip"
-          unzip -o "$FONTS_DIR/fontawesome.zip" -d "$FONTS_DIR/font-awesome" && rm "$FONTS_DIR/fontawesome.zip"
+          # Prepare local Typst package path for @local/modern-cv:0.7.0
+          PKG_ROOT="$GITHUB_WORKSPACE/.typst/packages/local/modern-cv/0.7.0"
+          mkdir -p "$PKG_ROOT"
+          rsync -a modern-cv/ "$PKG_ROOT/"
+          export TYPST_PACKAGE_PATHS="$GITHUB_WORKSPACE/.typst/packages"
           # Compile Typst to the website's cv folder
-          export TYPST_FONT_PATHS="$FONTS_DIR"
+          mkdir -p "$GITHUB_WORKSPACE/cv"
           typst compile resume.typ "$GITHUB_WORKSPACE/cv/andylizf_cv.pdf"
 
       - name: Configure Pages

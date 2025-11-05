@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll'
 
 group :jekyll_plugins do
+  gem 'jekyll-remote-theme'
   gem 'jekyll-archives-v2'
   gem 'jekyll-email-protect'
   gem 'jekyll-feed'
@@ -30,4 +31,3 @@ group :other_plugins do
   gem 'observer'
   gem 'ostruct'
 end
-
