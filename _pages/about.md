@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  CS undergrad @ Renmin University of China · Exchange @ UC Berkeley. ML Systems & Cloud Computing.
+  Visiting Student Researcher @ UC Berkeley Sky Computing Lab · Senior CS undergrad @ Renmin University of China. AI Systems, Cloud Computing, and Operating Systems.
 
 profile:
   align: right
@@ -24,9 +24,8 @@ latest_posts:
   enabled: false
 ---
 
-Hi! I’m Zhifei (Andy) Li. I’m interested in building and optimizing machine learning infrastructure and cloud computing systems.
+Hi! I’m Zhifei (Andy) Li. I’m a Visiting Student Researcher at UC Berkeley’s Sky Computing Lab and a senior-year CS undergraduate at Renmin University of China.
 
-Currently, I’m an undergraduate at Renmin University of China, and an exchange student at UC Berkeley. I like designing efficient AI platforms, distributed systems, and tooling that make research and production workflows simpler.
+My passion lies at the intersection of AI Systems, Cloud Computing, and Operating Systems. I enjoy building practical, efficient, and scalable infrastructure for AI workloads—tools that simplify research and production.
 
-If you’re recruiting for research roles or PhD programs, feel free to reach out.
-
+I am preparing to pursue a PhD in Computer Science. If you’d like to chat or are recruiting for research/PhD opportunities, feel free to reach out.

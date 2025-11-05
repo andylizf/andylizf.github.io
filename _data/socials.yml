@@ -1,12 +1,12 @@
-# social links (leave value empty to hide)
+# social links for al-folio (use keys from theme)
 
 email: zhifei.li@berkeley.edu
-github: andylizf
-linkedin: 
-google_scholar: 
-orcid: 
-twitter: 
-bluesky: 
-youtube: 
-website: 
-
+github_username: andylizf
+linkedin_username: andylizf
+scholar_userid: 7MiEsfAAAAAJ
+x_username: andylizf
+youtube_id:
+orcid_id:
+bluesky_url:
+website:
+rss_icon: true
