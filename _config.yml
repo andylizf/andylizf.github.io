@@ -28,6 +28,9 @@ navbar_fixed: true
 footer_fixed: true
 search_enabled: true
 
+# Dimensions
+max_width: 930px
+
 # Plugins used by al-folio
 plugins:
   - jekyll-remote-theme
