@@ -1,12 +1,39 @@
-# social links for al-folio (use keys from theme)
+# Social links for al-folio theme
 
 email: zhifei.li@berkeley.edu
+orcid_id: # your ORCID ID
+scholar_userid: # your Google Scholar ID
+semanticscholar_id: # your Semantic Scholar ID
+publons_id: # your Publons ID
+research_gate_profile: # your profile on ResearchGate
+google_analytics_id: # your Google Analytics ID (gtag)
+panelbear_analytics: # panelbear analytics site ID
+google_scholar_stats_use_cdn: true
 github_username: andylizf
+gitlab_username: # your GitLab user name
+bitbucket_username: # your Bitbucket user name
 linkedin_username: andylizf
-scholar_userid: 7MiEsfAAAAAJ
-x_username: andylizf
-youtube_id:
-orcid_id:
-bluesky_url:
-website:
-rss_icon: true
+twitter_username: andylizf
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+medium_username: # your Medium username
+quora_username: # your Quora username
+commonlounge_username: # your commonlounge username
+behance_username: # your Behance username
+deviantart_username: # your deviantart username
+flickr_username: # your flickr username
+pinterest_username: # your pinterest username
+unsplash_username: # your unsplash username
+instagram_id: # your instagram id
+facebook_id: # your facebook id
+youtube_id: # your youtube channel id (youtube.com/channel/your-id)
+discord_id: # your discord id (18-digit unique numerical identifier)
+zotero_username: # your zotero username
+wikidata_id: # your wikidata id
+wikipedia_id: # your wikipedia id (Case sensitive)
+dblp_url: # your DBLP profile url
+stackoverflow_id: # your stackoverflow id
+kaggle_id: # your kaggle id
+lastfm_id: # your lastfm id
+spotify_id: # your spotify id
+pinterest_id: # your pinterest id
+unsplash_id: # your unsplash id

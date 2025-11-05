@@ -28,6 +28,17 @@ navbar_fixed: true
 footer_fixed: true
 search_enabled: true
 
+# Blog
+blog_name: Zhifei (Andy) Li
+blog_nav_title: blog
+blog_description: Research updates
+
+# Jekyll
+external_links_in_new_tab: true
+enable_tooltips: false
+enable_darkmode: true
+enable_navbar_social: false
+
 # Dimensions
 max_width: 930px
 
