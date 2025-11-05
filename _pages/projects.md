@@ -5,16 +5,15 @@ permalink: /projects/
 description: Selected projects.
 nav: true
 nav_order: 3
-display_categories: [work]
-horizontal: false
 ---
 
 <div class="projects">
 {% assign sorted_projects = site.projects | sort: "importance" %}
-<div class="row row-cols-1 row-cols-md-3">
-  {% for project in sorted_projects %}
-    {% include projects.liquid %}
-  {% endfor %}
-</div>
+{% for project in sorted_projects %}
+  <div class="project">
+    <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+    <p>{{ project.description }}</p>
+  </div>
+{% endfor %}
 </div>
 
