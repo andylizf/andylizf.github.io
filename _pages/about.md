@@ -12,7 +12,7 @@ profile:
   more_info: >
     <p>zhifei.li@berkeley.edu</p>
 
-selected_papers: false
+selected_papers: true
 social: true
 
 announcements:

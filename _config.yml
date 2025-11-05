@@ -42,6 +42,13 @@ enable_navbar_social: false
 # Dimensions
 max_width: 930px
 
+# Publication badges
+enable_publication_badges:
+  altmetric: false
+  dimensions: false
+  google_scholar: false
+  inspirehep: false
+
 # Plugins used by al-folio
 plugins:
   - jekyll-remote-theme
