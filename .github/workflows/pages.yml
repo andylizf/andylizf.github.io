@@ -55,6 +55,7 @@ jobs:
           mkdir -p "$PKG_ROOT"
           rsync -a modern-cv/ "$PKG_ROOT/"
           export TYPST_PACKAGE_PATHS="$GITHUB_WORKSPACE/.typst/packages"
+          export TYPST_PACKAGE_PATH="$GITHUB_WORKSPACE/.typst/packages"
           export TYPST_FONT_PATHS="/usr/share/fonts"
           # Compile Typst to the website's cv folder
           mkdir -p "$GITHUB_WORKSPACE/cv"
