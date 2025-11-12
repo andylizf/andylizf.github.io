@@ -1,7 +1,7 @@
 ---
 layout: page
-title: LEANN — Local RAG with 97% Storage Savings
-description: Fast, accurate, and private RAG on personal devices with substantial storage reduction.
+title: LEANN — the Smallest Vector Index in the World
+description: 97% storage savings for RAG workloads while maintaining accuracy; production-ready Python package with CI/CD.
 importance: 2
 category: work
 links:
@@ -9,5 +9,5 @@ links:
     url: https://github.com/yichuan-w/LEANN
 ---
 
-Contributor to systems and performance aspects.
-
+- Co-designed and implemented the two-level recompute algorithm by extending FAISS’s C++ vector indexing, enabling dynamic query‑time decompression.
+- Led open-source engineering to refactor research prototype into a Python package, set up CI/CD, and grow community contributors.

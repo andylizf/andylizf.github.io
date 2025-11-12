@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SkyPilot — Run AI on Any Cloud
-description: Open-source framework to run ML/AI workloads across any cloud, simplifying infrastructure and reducing costs.
+title: SkyPilot — Run AI on Any Infra
+description: Framework for running ML/AI workloads across any cloud; built multi‑cloud AI workflow orchestration with data placement and spot recovery.
 importance: 1
 category: work
 links:
@@ -9,5 +9,4 @@ links:
     url: https://github.com/skypilot-org/skypilot
 ---
 
-Core developer on SkyPilot, focusing on scheduling, orchestration, and reliability.
-
+- Designed and implemented multi‑cloud AI workflow orchestration with parallelism, data placement optimization, and dynamic spot recovery (~45% cost reduction).
