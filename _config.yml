@@ -40,7 +40,7 @@ enable_darkmode: true
 enable_navbar_social: false
 
 # Dimensions
-max_width: 930px
+max_width: 840px
 
 # Footer text (rendered by al-folio's default footer)
 footer_text: >
@@ -92,7 +92,7 @@ collections:
     output: true
     permalink: /:path/
   news:
-    output: true
+    output: false
     permalink: /news/:path/
   projects:
     output: true
