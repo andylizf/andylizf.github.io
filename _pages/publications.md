@@ -13,4 +13,4 @@ nav_order: 2
 
 ## All publications
 
-{% bibliography --query @*[selected!=true] --group_by year --group_order descending %}
+{% bibliography --query @*[selected=false] --group_by year --group_order descending %}
