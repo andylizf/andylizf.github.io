@@ -9,8 +9,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info: >
-    <p>zhifei.li@berkeley.edu<br/>(+1) 510-292-1508</p>
+  # more_info intentionally omitted for a cleaner header (no phone/email inline)
 
 selected_papers: true
 social: true
