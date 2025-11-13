@@ -60,6 +60,7 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-toc
+  - jekyll-email-protect
 
 # SASS
 sass:
