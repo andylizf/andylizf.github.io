@@ -83,6 +83,9 @@ scholar:
   bibliography_template: bib
   sort_by: year, month
   order: descending
+  # Highlight own name in publication lists
+  first_name: ["Zhifei", "Andy"]
+  last_name: ["Li"]
   
   replace_strings: true
   join_strings: true
