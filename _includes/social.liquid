@@ -1,0 +1,41 @@
+{% comment %}
+  Local override: skip socials with blank values and suppress theme default email.
+{% endcomment %}
+{% for social in site.data.socials %}
+  {% assign key = social[0] %}
+  {% assign val = social[1] %}
+  {% if val == blank %}
+    {% continue %}
+  {% endif %}
+  {% if key == 'email' and val == 'you@example.com' %}
+    {% continue %}
+  {% endif %}
+  {% case key %}
+    {% when 'email' %}
+      <a href="mailto:{{ val | encode_email }}" title="email"><i class="fa-solid fa-envelope"></i></a>
+    {% when 'github_username' %}
+      <a href="https://github.com/{{ val }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    {% when 'linkedin_username' %}
+      <a href="https://www.linkedin.com/in/{{ val }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    {% when 'scholar_userid' %}
+      <a href="https://scholar.google.com/citations?user={{ val }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+    {% when 'inspirehep_id' %}
+      <a href="https://inspirehep.net/authors/{{ val }}" title="Inspire HEP"><i class="ai ai-inspire"></i></a>
+    {% when 'rss_icon' %}
+      {% if val == true %}
+        <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa-solid fa-square-rss"></i></a>
+      {% endif %}
+    {% else %}
+      <a href="{{ val.url }}" title="{{ val.title }}">
+        {% assign file_ext = val.logo | split: '.' | last %}
+        {% if file_ext == 'svg' %}
+          <svg>
+            <image xlink:href="{% if val.logo contains '://' %}{{ val.logo }}{% else %}{{ val.logo | relative_url }}{% endif %}" />
+          </svg>
+        {% else %}
+          <img src="{% if val.logo contains '://' %}{{ val.logo }}{% else %}{{ val.logo | relative_url }}{% endif %}" alt="{{ val.title }}">
+        {% endif %}
+      </a>
+  {% endcase %}
+{% endfor %}
+
