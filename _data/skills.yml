@@ -1,0 +1,32 @@
+# Technical skills organized by category
+categories:
+  - name: Programming Languages
+    skills:
+      - name: C++
+        level: expert
+      - name: Python
+        level: expert
+      - name: CUDA
+        level: advanced
+      - name: Rust
+        level: intermediate
+      - name: TypeScript
+        level: intermediate
+      - name: PyTorch
+        level: advanced
+
+  - name: Systems & Cloud
+    skills:
+      - Distributed Systems
+      - Parallel Computing
+      - Performance Optimization
+      - Cloud Infrastructure (AWS, GCP, Azure)
+      - Container Orchestration (Kubernetes, Docker)
+
+  - name: Research Areas
+    skills:
+      - Machine Learning Systems
+      - Storage Optimization
+      - Resource Scheduling
+      - Cost Optimization
+      - Evolutionary Algorithms

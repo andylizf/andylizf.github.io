@@ -1,0 +1,28 @@
+# Impact statistics for display
+github_stars:
+  leann: 4100
+  skypilot_contributions: 50
+
+performance:
+  storage_reduction: 97
+  cost_reduction: 50
+  latency_impact: 5
+
+academic:
+  rank: 5
+  total: 136
+  percentile: 3.7
+
+awards:
+  - name: Elite Collegiate Award
+    organization: China Computer Federation
+    note: "<100 recipients nationally"
+    year: 2025
+  - name: National Scholarship
+    organization: Ministry of Education
+    note: "Top 0.2% nationally"
+    year: 2024
+  - name: Dean's Scholarship
+    organization: Gaoling School of AI
+    note: "15 out of 2000"
+    year: 2025
