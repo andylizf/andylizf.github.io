@@ -244,7 +244,6 @@ keep_files:
 
 # Plug-ins
 plugins:
-  - jekyll-archives
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-get-json
@@ -327,19 +326,8 @@ jekyll-minifier:
     harmony: true
 
 # -----------------------------------------------------------------------------
-# Jekyll Archives
+# Jekyll Archives - Disabled for minimal configuration
 # -----------------------------------------------------------------------------
-
-jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-  layouts:
-    year: archive-year
-    tag: archive-tag
-    category: archive-category
-  permalinks:
-    year: "/blog/:year/"
-    tag: "/blog/tag/:name/"
-    category: "/blog/category/:name/"
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
