@@ -8,11 +8,17 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info:
+  more_info: >
+    <p style="text-align: center;">
+      <a href="mailto:zhifei.li@berkeley.edu">Email</a> /
+      <a href="https://github.com/andylizf">GitHub</a> /
+      <a href="https://www.linkedin.com/in/andylizf">LinkedIn</a> /
+      <a href="/cv/">CV</a>
+    </p>
 
 news: true
 selected_papers: true
-social: true
+social: false
 ---
 
 I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I received my B.S. in Computer Science from [Renmin University of China](https://www.ruc.edu.cn/).
