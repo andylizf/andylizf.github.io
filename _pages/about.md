@@ -1,25 +1,20 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: >
-  Visiting Student Researcher @ UC Berkeley Sky Computing Lab · Senior CS undergrad @ Renmin University of China
+subtitle:
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  # more_info intentionally omitted for a cleaner header (no phone/email inline)
+  more_info:
 
+news: true
 selected_papers: true
 social: true
-
-news: true # includes a list of news items
-
-latest_posts:
-  enabled: false
 ---
 
-I'm a Visiting Student Researcher at UC Berkeley's [Sky Computing Lab](https://sky.cs.berkeley.edu/), working with Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I'm also a senior-year CS undergraduate at [Renmin University of China](https://www.ruc.edu.cn/) in the Turing Honors Class.
+I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I received my B.S. in Computer Science from [Renmin University of China](https://www.ruc.edu.cn/).
 
-My research interests lie in building efficient systems for machine learning workloads, focusing on cloud resource orchestration and storage-optimized serving.
+My research interests lie in building efficient system support for AI applications, focusing on cloud resource orchestration and storage optimization.
