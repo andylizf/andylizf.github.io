@@ -474,4 +474,4 @@ vega:
 # Jekyll Remote Theme
 # -----------------------------------------------------------------------------
 
-remote_theme: alshedivat/al-folio@v0.14.0
+remote_theme: alshedivat/al-folio@v0.10.0
