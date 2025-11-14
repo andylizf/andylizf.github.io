@@ -1,14 +1,13 @@
 ---
-layout: default
+layout: home
+author_profile: true
 ---
 
-# Zhifei Li (李知非)
+# About Me
 
 I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I received my B.S. in Computer Science from [Renmin University of China](https://www.ruc.edu.cn/).
 
 My research interests lie in building efficient system support for AI applications, focusing on cloud resource orchestration and storage optimization.
-
-[Email](mailto:zhifei.li@berkeley.edu) | [GitHub](https://github.com/andylizf) | [LinkedIn](https://www.linkedin.com/in/andylizf) | [CV](/assets/pdf/cv.pdf)
 
 ## Publications
 
