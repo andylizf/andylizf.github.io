@@ -6,11 +6,7 @@ layout: default
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
+      {{ site.title }}
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
@@ -28,9 +24,14 @@ layout: default
           {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
           <img class="{{ profile_image_class }}" src="{{ profile_image_path | relative_url }}" alt="{{ site.title }}">
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+        <div class="social">
+          <div class="contact-notes">
+            <a href="mailto:zhifei.li@berkeley.edu" title="email">Email</a> |
+            <a href="https://github.com/andylizf" title="GitHub">GitHub</a> |
+            <a href="https://www.linkedin.com/in/andylizf" title="LinkedIn">LinkedIn</a> |
+            <a href="/assets/pdf/cv.pdf" title="CV">CV</a>
+          </div>
+        </div>
       </div>
     {% endif %}
 
@@ -47,18 +48,12 @@ layout: default
     <!-- Publications -->
     {% if page.selected_papers %}
       <h2>Publications</h2>
-      <p style="font-size: 0.9em; color: #666; margin-bottom: 1em;">* denotes equal contribution</p>
-      {% bibliography --query @*[selected=true] %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">
-          {% include social.liquid %}
-        </div>
-        <div class="contact-note">{{ site.contact_note }}</div>
+      <hr style="margin-top: 2px; margin-bottom: 2px;">
+      <p style="margin-top: 2px;"><em>* means equal contribution</em></p>
+      <div class="publications">
+        {% bibliography --query @*[selected=true] %}
       </div>
     {% endif %}
+
   </article>
 </div>

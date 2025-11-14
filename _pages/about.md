@@ -8,13 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info: >
-    <p style="text-align: center;">
-      <a href="mailto:zhifei.li@berkeley.edu">Email</a> /
-      <a href="https://github.com/andylizf">GitHub</a> /
-      <a href="https://www.linkedin.com/in/andylizf">LinkedIn</a> /
-      <a href="/cv/">CV</a>
-    </p>
+  more_info:
 
 news: false
 selected_papers: true
