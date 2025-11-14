@@ -30,6 +30,7 @@ Zhifei Li\*, Tian Xia\*, and others, Ion Stoica
 
 **[LEANN: A Low-Storage Vector Index for Personal Devices](https://arxiv.org/abs/2506.08276)**
 Yichuan Wang, Shu Liu, Zhifei Li, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez
+*ICML 2025 Workshop on Vector Databases*
 *MLSys 2026 (In submission)*
 
 ### 2024
