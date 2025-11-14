@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-
 group :jekyll_plugins do
-  gem 'jekyll-remote-theme', '~> 0.4.3'
+  gem 'jekyll'
   gem 'jekyll-feed'
-  gem 'jekyll-scholar'
   gem 'jekyll-sitemap'
+  gem 'jekyll-redirect-from'
   gem 'jemoji'
-  gem 'jekyll-toc'
-  gem 'jekyll-email-protect'
+  gem 'webrick', '~> 1.8'
 end
+
+gem 'github-pages'
+gem 'connection_pool', '2.5.0'
