@@ -1,10 +1,12 @@
 ---
-layout: cv
+layout: archive
+title: "CV"
 permalink: /cv/
-title: CV
-nav: false
-nav_order: 4
-cv_pdf: /assets/pdf/cv.pdf
+author_profile: true
+redirect_from:
+  - /resume
 ---
 
-Please see my [CV PDF](/assets/pdf/cv.pdf) for a complete listing of my experience and publications.
+{% include base_path %}
+
+[Download CV (PDF)](/assets/pdf/cv.pdf)

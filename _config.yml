@@ -1,477 +1,307 @@
-# -----------------------------------------------------------------------------
-# Site settings
-# -----------------------------------------------------------------------------
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve -l -H localhost`. If you change this file, please restart the 
+# server process.
 
-title: Zhifei Li (李知非)
-shown_title: Zhifei Li (李知非)
-first_name: Zhifei
-middle_name:
-last_name: Li
-email: zhifei.li@berkeley.edu
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: Computer Science, UC Berkeley, Machine Learning Systems
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+# Basic Site Settings
+locale                   : "en-US"
+site_theme               : "default" # Currently available options are "default", "air"
+title                    : "Zhifei Li"
+title_separator          : "-"
+name                     : &name "Zhifei Li"
+description              : &description "Personal website"
+url                      : https://andylizf.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "andylizf/andylizf.github.io"
 
-url: https://andylizf.github.io/
-baseurl:
-last_updated: true # set to true if you want to display last updated in the footer
-impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
-back_to_top: false # set to false to disable the back to top button
+author:
+  avatar           : "prof_pic.jpg"
+  name             : "Zhifei Li (李知非)"
+  bio              : "Visiting Student Researcher at UC Berkeley"
+  location         : "Berkeley, CA"
+  email            : "zhifei.li@berkeley.edu"
+  googlescholar    :
+  github           : "andylizf"
+  linkedin         : "andylizf"
 
-# -----------------------------------------------------------------------------
-# Theme
-# -----------------------------------------------------------------------------
+# Publication Category - The following the list of publication categories and their headings
+publication_category:
+  books:
+    title: 'Books'
+  manuscripts:
+    title: 'Journal Articles'    
+  conferences:
+    title: 'Conference Papers'
 
-# repo color theme
-repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_trophies:
-  enabled: false
-  theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
-  theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
+# Site Settings
+teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
+breadcrumbs              : false # true, false (default)
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link             : false      #change to true to add link to talkmap on talks page
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  disqus:
+    shortname            :
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "gh-pages" # "master", "gh-pages"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : "_data/comments/{options.slug}"
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+atom_feed:
+  hide                   : false     # change to true to hide the RSS feed in the footer
+  path                   : # blank (default) uses feed.xml
 
-# -----------------------------------------------------------------------------
-# RSS Feed
-# -----------------------------------------------------------------------------
-# will use title and url fields
-# Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: false
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
 
-# -----------------------------------------------------------------------------
-# Layout
-# -----------------------------------------------------------------------------
 
-navbar_fixed: true
-footer_fixed: false
-search_enabled: false
-socials_in_search: false
-bib_search: false
+# Social Sharing
+twitter:
+  username               : &twitter
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :  # Social media default site image
+og_description           :  # Social media default site image description
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
 
-# Dimensions
-max_width: 840px
 
-# TODO: add layout settings (single page vs. multi-page)
+# Analytics
+analytics:
+  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  google:
+    tracking_id          :
 
-# -----------------------------------------------------------------------------
-# Open Graph & Schema.org
-# -----------------------------------------------------------------------------
-# Display links to the page with a preview object on social media.
-# see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
 
-# -----------------------------------------------------------------------------
-# Social integration
-# -----------------------------------------------------------------------------
-
-acm_id: # your dl.acm.org/profile/id
-blogger_url: # your blogger URL
-bluesky_url: # your bluesky URL
-dblp_url: # your DBLP profile url
-discord_id: # your discord id (18-digit unique numerical identifier)
-facebook_id: # your facebook id
-flickr_id: # your flickr id
-github_username: andylizf
-gitlab_username: # your GitLab user name
-ieee_id: # your ieeexplore.ieee.org/author/id
-inspirehep_id: # Inspire HEP author ID
-instagram_id: # your instagram id
-kaggle_id: # your kaggle id
-keybase_username: # your keybase user name
-lastfm_id: # your lastfm id
-lattes_id: # your ID on Lattes (Brazilian Lattes CV)
-linkedin_username: andylizf
-mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-medium_username: # your Medium username
-orcid_id: # your ORCID ID
-osf_id: # your OSF ID
-pinterest_id: # your pinterest id
-publons_id: # your ID on Publons
-quora_username: # your Quora username
-research_gate_profile: # your profile on ResearchGate
-scholar_userid: # your Google Scholar ID
-scopus_id: # your profile on Scopus
-semanticscholar_id: # your Semantic Scholar ID
-spotify_id: # your spotify id
-stackoverflow_id: # your stackoverflow id
-telegram_username: # your Telegram user name
-twitter_username: # your Twitter handle
-unsplash_id: # your unsplash id
-wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-wikidata_id: # your wikidata id
-wikipedia_id: # your wikipedia id (Case sensitive)
-work_url: # work page URL
-x_username: # your X handle
-youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
-zotero_username: # your zotero username
-
-# contact_note: >
-#   You can even add a little note about which of these is the best way to reach you.
-
-# -----------------------------------------------------------------------------
-# Analytics and search engine verification
-# -----------------------------------------------------------------------------
-
-# For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
-# and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-google_analytics: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
-cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
-
-google_site_verification: # your google-site-verification ID (Google Search Console)
-bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
-baidu_site_verification: # out your baidu-site-verification ID
-
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
-# blog_name: Zhifei Li # blog_name will be displayed in your blog page
-# blog_description: Research updates
-# blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-
-# Pagination
-pagination:
-  enabled: false
-
-# Giscus comments (RECOMMENDED)
-# Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
-giscus:
-  enabled: false
-  repo: # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
-  category: Comments # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: title # identify discussions by post title
-  strict: 1 # use strict identification mode
-  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
-  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
-  emit_metadata: 0
-  lang: en
-  lazy: false
-
-# Disqus comments (DEPRECATED)
-disqus_shortname: # put your disqus shortname
-# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
-# External sources.
-# If you have blog posts published on medium.com or other external sources,
-# you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-
-# -----------------------------------------------------------------------------
-# Newsletter
-# -----------------------------------------------------------------------------
-
-newsletter:
-  enabled: false
-  endpoint: # your loops endpoint (e.g., https://app.loops.so/api/newsletter-form/YOUR-ENDPOINT)
-  # https://loops.so/docs/forms/custom-form
-
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
-
-collections:
-  news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /:collection/:title/
-  projects:
-    output: true
-    permalink: /:collection/:title/
-
-announcements:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
-
-# -----------------------------------------------------------------------------
-# Jekyll settings
-# -----------------------------------------------------------------------------
-
-# Markdown and syntax highlight
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    css_class: "highlight"
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
-
-# Includes & excludes
-include: ["_pages"]
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
 exclude:
-  - bin/
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - config
   - Dockerfile
-  - docker-compose.yml
-  - docker-compose-slim.yml
-  - FAQ.md
   - Gemfile
-  - Gemfile.lock
-  - INSTALL.md
+  - Gruntfile.js
+  - gulpfile.js
   - LICENSE
-  - lighthouse_results/
-  - package.json
-  - package-lock.json
-  - _pages/about_einstein.md
-  - purgecss.config.js
-  - README.md
-  - readme_preview/
+  - local
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README
+  - tmp
   - vendor
 keep_files:
-  - CNAME
-  - .nojekyll
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Plug-ins
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+# These settings control the types of collections used by the template
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+
+
+# These settings control how pages and collections are included in the site
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
-  - jekyll-scholar
+  - jekyll-gist
+  - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jemoji
 
-# Sitemap settings
-defaults:
-  - scope:
-      path: "assets"
-    values:
-      sitemap: false
+# Mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
 
-sass:
-  style: compressed
 
-# -----------------------------------------------------------------------------
-# Jekyll Scholar
-# -----------------------------------------------------------------------------
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
-scholar:
-  last_name: [Li]
-  first_name: [Zhifei]
 
-  style: apa
-  locale: en
-
-  source: /_bibliography/
-  bibliography: papers.bib
-  bibliography_template: bib
-  # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
-  bibtex_filters: [latex, smallcaps, superscript]
-
-  replace_strings: true
-  join_strings: true
-
-  details_dir: bibliography
-  details_layout: bibtex.liquid
-  details_link: Details
-
-  query: "@*"
-  group_by: year
-  group_order: descending
-
-# Display different badges withs stats for your publications
-enable_publication_badges:
-  altmetric: false # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
-  dimensions: false # Dimensions badge (https://badge.dimensions.ai/)
-  google_scholar: false # Google Scholar badge (https://scholar.google.com/citations?user=USERNAME)
-
-# Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, additional_info, altmetric, annotation, arxiv, award, award_name, bibtex_show, code, comment, dimensions, doi, eprint, google_scholar_id, html, isbn, pdf, poster, preview, selected, slides, supp, video, website]
-
-# Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author: 10
-more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
-
-# Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
-enable_publication_thumbnails: false
-
-# -----------------------------------------------------------------------------
-# Jekyll Minifier
-# -----------------------------------------------------------------------------
-
-jekyll-minifier:
-  exclude: ["robots.txt", "assets/js/search/*.js"]
-  uglifier_args:
-    harmony: true
-
-# -----------------------------------------------------------------------------
-# Jekyll Archives - Disabled for minimal configuration
-# -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
-# Jekyll Link Attributes
-# -----------------------------------------------------------------------------
-
-# These are the defaults
-external_links:
-  enabled: true
-  rel: external nofollow noopener
-  target: _blank
-  exclude:
-
-# -----------------------------------------------------------------------------
-# Responsive WebP Images
-# -----------------------------------------------------------------------------
-
-# MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
-#   convert -version
-imagemagick:
-  enabled: false # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
-  widths:
-    - 480
-    - 800
-    - 1400
-  input_directories:
-    - assets/img/
-  input_formats:
-    - ".jpg"
-    - ".jpeg"
-    - ".png"
-    - ".tiff"
-    - ".gif"
-  output_formats:
-    webp: "-quality 85"
-
-# Lazy loading images
-# If you enable lazy loading, all images will add the loading="lazy" attribute.
-# This will make your site load faster, but it may not be supported in all browsers.
-# You can also set loading="" to other values for specific images to override the default behavior.
-# Options: "auto", "eager", "lazy"
-# See https://web.dev/browser-level-image-lazy-loading/ for more information.
-lazy_loading_images: true # enables lazy loading of images (recommended)
-
-# -----------------------------------------------------------------------------
-# Optional Features
-# -----------------------------------------------------------------------------
-
-enable_google_analytics: false # enables google analytics
-enable_cronitor_analytics: false # enables cronitor RUM analytics
-enable_google_verification: false # enables google site verification
-enable_bing_verification: false # enables bing site verification
-enable_baidu_verification: false # enables baidu site verification
-enable_math: true # enables math typesetting (uses MathJax)
-enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
-enable_darkmode: false # enables switching between light/dark modes
-enable_navbar_social: false # enables displaying social links in the navbar on the about page
-enable_project_categories: false # enables categorization of projects into multiple categories
-enable_medium_zoom: false # enables image zoom feature (as on medium.com)
-enable_progressbar: false # enables a horizontal progress bar linked to the vertical scroll position
-
-# -----------------------------------------------------------------------------
-# Library versions
-# -----------------------------------------------------------------------------
-
-bootstrap-table:
-  version: "1.22.6"
-bootstrap:
-  version: "5.3.3"
-  integrity:
-    css: "sha256-PI8n5gCcz9cQqQXm3PEtDuPG8qx9oFsFctPg0S5zb8g="
-    js: "sha256-7uda0XnTt2t6ewYWDqV+vAPDYcvlcKVIO5Y6r9/aNKE="
-clipboard:
-  version: "2.0.11"
-  integrity: "sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck="
-d3:
-  version: "7.9.0"
-  integrity: "sha256-eTuMt6SiPzeA+wB+IvwVPsd7v0iywBfK6tUCMRwhiKY="
-diff2html:
-  version: "3.4.48"
-  integrity:
-    css: "sha256-50F9WT1zEQQFVPswhvKQFi1K1U8RB06M9g+l7PjvJa0="
-    js: "sha256-QZ9+4C4YMdCRJnRCQEU5ncyepINv2V1wqK8GnJHyJfA="
-echarts:
-  version: "5.5.0"
-  integrity:
-    library: "sha256-JLk23bhLdh+t5N37XQsP3z9f1fHwm3bDxXN7b3+SJH8="
-    dark_theme: "sha256-EiZCZgy2nOQ5PQy1U6y5CIHZdQFztJ1GJQUR+AZMYmw="
-fontawesome:
-  version: "6.5.2"
-  integrity: "sha256-XLjBrF/OzgWKKgNH5jfijFkXzpQ8K6JNJFj8u4OzQjA="
-imagesloaded:
-  version: "5.0.0"
-  integrity: "sha256-htrLFfZRqlt+riHAqP0Wguo0FSX5F1r/71fQJ3B0sI4="
-img-comparison-slider:
-  version: "8.0.6"
-  integrity:
-    css: "sha256-oe+fxJgoCbuLOmCCnfmYxdLbCdXpmZiRxn7YQzHrElE="
-    js: "sha256-NwWlg6fAOGLIfWU3sJvITi9M0F3072fll6H3Smj9HJo="
-jquery:
-  version: "3.7.1"
-  integrity: "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-leaflet:
-  version: "1.9.4"
-  integrity:
-    css: "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    js: "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    js_map: "sha256-YNlHU7g2p2WQwJqJdaZQHVpGKKz8Y0Oa0RB2bDB0NfM="
-masonry:
-  version: "4.2.2"
-  integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
-mathjax:
-  version: "3.2.2"
-  integrity:
-    es5: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
-medium_zoom:
-  version: "1.1.0"
-  integrity: "sha256-EYVoS1J98SY0J4OFCTJcL9s6nEHkYmmpEBHmqaGVUwY="
-mermaid:
-  version: "10.7.0"
-  integrity: "sha256-TtLOdUA8mstPoO6MYmKHqfH3HHlLWXvKVpVvfaQWtNI="
-polyfill:
-  version: "v3"
-  min_zxcvbn: "4.4.1"
-  url: "https://cdnjs.cloudflare.com/polyfill/"
-prismjs:
-  version: "1.29.0"
-  integrity:
-    css: "sha256-ko4j5rn874LF8dHwW29/xabhh8YBleWfvxb8nQce4Fc="
-    js: "sha256-BN8GgUKUTa/NI5Dh4+Xv+VpRjc1PbiIiDn1DqEvqSy0="
-pseudocode:
-  version: "2.4.1"
-  integrity:
-    css: "sha256-8WNX/J6L5v9QRIXsBCb5YoW5xP5nQKDGjj8M2UxWqkI="
-    js: "sha256-1Uo3CZlMX7s6D+Cf2daRZtFfOq4o3PqMdJylLmGkkJ4="
-swiper:
-  version: "11.1.4"
-  integrity:
-    css: "sha256-0R8CE1Zs9mqNqM7YdJ0pElpLEqGjyXlBzPBvGYE0Fxo="
-    js: "sha256-5tqAzctXvs3dNaQU8TPzwPW5rF9S5RZ9obASHm7fKJE="
-swiper-element:
-  version: "11.1.4"
-  integrity: "sha256-ygO0HiAH1EH8HRtYPXPNBHoVRw0K2WVjEQ6OJuV6iFg="
-vega-embed:
-  version: "6.25.0"
-  integrity: "sha256-x2UXr4eTwWfCJ9v/JreGCsNhiV1wSA6YJ3Ww0MBJu5c="
-vega-lite:
-  version: "5.18.1"
-  integrity: "sha256-A2ggCU9zrvh6nzQRg7NPWrrt2KzFNqqT+xvC0zmxxJI="
-vega:
-  version: "5.28.0"
-  integrity: "sha256-e82Bt9rl8lZWh31TQQakPwEbBI5tnLwmqGZiXSqJl0w="
-
-# -----------------------------------------------------------------------------
-# Jekyll Remote Theme
-# -----------------------------------------------------------------------------
-
-remote_theme: alshedivat/al-folio@v0.10.0
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
