@@ -15,7 +15,7 @@ I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley
 a {text-decoration: none;}
 </style>
 
-**\* denotes equal contribution**
+<span style="color: #666; font-size: 0.9em; font-style: italic;">\* denotes equal contribution</span>
 
 SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference\
 Tian Xia, Ziming Mao, Jamison Kerney, Ethan J. Jackson, **Zhifei Li**, Jiarong Xing, Scott Shenker, Ion Stoica\
