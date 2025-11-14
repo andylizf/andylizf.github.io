@@ -16,7 +16,7 @@ profile:
       <a href="/cv/">CV</a>
     </p>
 
-news: true
+news: false
 selected_papers: true
 social: false
 ---

@@ -44,10 +44,10 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
-    <!-- Selected papers -->
+    <!-- Publications -->
     {% if page.selected_papers %}
       <h2>Publications</h2>
-      <p style="font-size: 0.9em; color: #666; margin-bottom: 1em;">* means equal contribution</p>
+      <p style="font-size: 0.9em; color: #666; margin-bottom: 1em;">* denotes equal contribution</p>
       {% bibliography --query @*[selected=true] %}
     {% endif %}
 
