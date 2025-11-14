@@ -2,9 +2,6 @@
 permalink: /
 title: "About"
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
 I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I received my B.S. in Computer Science from [Renmin University of China](https://www.ruc.edu.cn/).

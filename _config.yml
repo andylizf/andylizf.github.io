@@ -255,13 +255,11 @@ timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-redirect-from
 
 # Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-redirect-from
 
 
 # Archives
