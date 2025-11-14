@@ -1,15 +1,12 @@
 ---
 permalink: /
 title: "Zhifei Li's Homepage"
-excerpt: ""
+excerpt: "About me"
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
-
-[View My CV](/assets/pdf/cv.pdf)
-
 
 ## About Me
 <p style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
@@ -20,17 +17,6 @@ redirect_from:
 <p style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
   I received my B.S. in Computer Science from <a href="https://www.ruc.edu.cn/" target="_blank" rel="noopener noreferrer"><strong>Renmin University of China</strong></a>.
 </p>
-
-
-## Research Interests
-<span style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
-My research interests lie in building <u>efficient system support for AI applications</u>, focusing on:</span>
-
-<span style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
-<strong>(1)</strong> <u>Cloud Resource Orchestration</u>: Optimizing resource allocation and scheduling for large-scale distributed systems</span>
-
-<span style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
-<strong>(2)</strong> <u>Storage Optimization</u>: Developing efficient storage solutions for AI workloads and vector databases</span>
 
 
 ## Selected Publications
@@ -73,10 +59,3 @@ My research interests lie in building <u>efficient system support for AI applica
 | <i class="fa fa-file-pdf"></i> <a href="#">paper</a> |
 
 ---
-
-## Contact
-<p style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
-Email: zhifei.li@berkeley.edu<br>
-GitHub: <a href="https://github.com/andylizf" target="_blank">andylizf</a><br>
-LinkedIn: <a href="https://www.linkedin.com/in/andylizf" target="_blank">andylizf</a>
-</p>
