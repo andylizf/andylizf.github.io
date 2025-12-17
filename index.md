@@ -15,8 +15,8 @@ My research interests lie in **designing efficient systems for ML**, focusing on
 
 - **Aug 2025**: SkyWalker accepted to EuroSys 2026!
 - **Aug 2025**: Received CCF Elite Collegiate Award (<100 recipients nationally)
+- **Jul 2025**: Started visiting UC Berkeley Sky Computing Lab
 - **May 2025**: Received Dean's Scholarship, Gaoling School of AI
-- **Sep 2024**: Started visiting UC Berkeley Sky Computing Lab
 
 ## Selected Publications
 
