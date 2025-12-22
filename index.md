@@ -52,11 +52,11 @@ Qiuyang Mang\*, Wenhao Cai\*, **Zhifei Li\***, Huanzhi Mao\*, and others, Ion St
 
 ## Open Source
 
-**[SkyPilot](https://github.com/skypilot-org/skypilot)** (9k+ ★) - Run AI on Any Infra\
+**[SkyPilot](https://github.com/skypilot-org/skypilot)** (9.1k+ ★) - Run AI on Any Infra\
 Top 10 contributor; 70+ issues, 50+ PRs merged; 30,000+ lines of code contributed\
 Built High Availability Controller for SkyServe, adopted by startups including Hypermode
 
-**[LEANN](https://github.com/yichuan-w/LEANN)** (4.1k+ ★) - The Smallest Vector Index\
+**[LEANN](https://github.com/yichuan-w/LEANN)** (5.2k+ ★) - The Smallest Vector Index\
 Led research-to-production translation; 40k+ community downloads\
 Technical outreach achieving 600k+ views
 
