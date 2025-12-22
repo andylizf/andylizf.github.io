@@ -52,11 +52,12 @@ Audrey Cheng\*, Shu Liu\*, Melissa Pan\*, **Zhifei Li**, Bowen Wang, Alex Krents
 
 FrontierCS: The Next Frontier of Computer Science\
 Qiuyang Mang\*, Wenhao Cai\*, **Zhifei Li\***, Huanzhi Mao\*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung\
-<span style="color:green; font-style:italic">arXiv 2024</span>
+<span style="color:green; font-style:italic">arXiv 2024</span>\
+[<a style="text-decoration:none" href="https://arxiv.org/abs/2512.15699" target="_blank">Paper</a>]
 
 ## Open Source
 
-**[SkyPilot](https://github.com/skypilot-org/skypilot)** (8.9k+ ★) - Run AI on Any Infra\
+**[SkyPilot](https://github.com/skypilot-org/skypilot)** (9k+ ★) - Run AI on Any Infra\
 Top 10 contributor; 70+ issues, 50+ PRs merged; 30,000+ lines of code contributed\
 Built High Availability Controller for SkyServe, adopted by startups including Hypermode
 

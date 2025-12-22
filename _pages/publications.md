@@ -32,3 +32,4 @@ Audrey Cheng\*, Shu Liu\*, Melissa Pan\*, Zhifei Li, Bowen Wang, Alex Krentsel, 
 **FrontierCS: The Next Frontier of Computer Science**
 Qiuyang Mang\*, Wenhao Cai\*, Zhifei Li\*, Huanzhi Mao\*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung
 *arXiv 2024*
+[[Paper](https://arxiv.org/abs/2512.15699)]
