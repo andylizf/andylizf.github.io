@@ -16,12 +16,14 @@ Tian Xia, Ziming Mao, Jamison Kerney, Ethan J. Jackson, Zhifei Li, Jiarong Xing,
 **SkyNomad: Cost-Effective Multi-Region Scheduling for Deadline-Sensitive Workloads on Spot Instances**
 Zhifei Li\*, Tian Xia\*, and others, Ion Stoica
 *OSDI 2026 (In submission)*
+[[Paper](https://arxiv.org/abs/2601.06520)]
 
 ## 2025
 
 **LEANN: A Low-Storage Vector Index for Personal Devices**
 Yichuan Wang, Zhifei Li, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez
-*ICML 2025 Workshop on Vector Databases*
+*MLSys 2026 (To appear)*
+[[Paper](https://arxiv.org/abs/2506.08276)]
 
 ## 2024
 
@@ -31,5 +33,5 @@ Audrey Cheng\*, Shu Liu\*, Melissa Pan\*, Zhifei Li, Bowen Wang, Alex Krentsel, 
 
 **FrontierCS: The Next Frontier of Computer Science**
 Qiuyang Mang\*, Wenhao Cai\*, Zhifei Li\*, Huanzhi Mao\*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung
-*arXiv 2024*
+*ICML 2026 (In submission)*
 [[Paper](https://arxiv.org/abs/2512.15699)]
