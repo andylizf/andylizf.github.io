@@ -13,6 +13,7 @@ My research interests lie in **designing efficient systems for ML**, focusing on
 
 ## News
 
+- **Feb 2026**: LEANN accepted to MLSys 2026!
 - **Aug 2025**: SkyWalker accepted to EuroSys 2026!
 - **Aug 2025**: Received CCF Elite Collegiate Award (<100 recipients nationally)
 - **Jul 2025**: Started visiting UC Berkeley Sky Computing Lab
@@ -37,7 +38,7 @@ SkyNomad: Cost-Effective Multi-Region Scheduling for Deadline-Sensitive Workload
 
 LEANN: A Low-Storage Vector Index for Personal Devices\
 Yichuan Wang, **Zhifei Li**, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez\
-<span style="color:green; font-style:italic">ICML 2025 Workshop on Vector Databases</span> | <span style="color:green; font-style:italic">MLSys 2026 (In submission)</span>\
+<span style="color:green; font-style:italic">MLSys 2026</span>\
 [<a style="text-decoration:none" href="https://arxiv.org/abs/2506.08276" target="_blank">Paper</a>]
 
 Barbarians at the Gate: How AI is Upending Systems Research\
@@ -56,7 +57,7 @@ Qiuyang Mang\*, Wenhao Cai\*, **Zhifei Li\***, Huanzhi Mao\*, and others, Ion St
 Top 10 contributor; 70+ issues, 50+ PRs merged; 30,000+ lines of code contributed\
 Built High Availability Controller for SkyServe, adopted by startups including Hypermode
 
-**[LEANN](https://github.com/yichuan-w/LEANN)** (5.2k+ ★) - The Smallest Vector Index\
+**[LEANN](https://github.com/yichuan-w/LEANN)** (9k+ ★) - The Smallest Vector Index\
 Led research-to-production translation; 40k+ community downloads\
 Technical outreach achieving 600k+ views
 
