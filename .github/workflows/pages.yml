@@ -2,7 +2,7 @@ name: Build and Deploy (GitHub Pages)
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master, main]
   workflow_dispatch:
 
 permissions:
@@ -11,77 +11,44 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          ruby-version: "3.3"
-          bundler-cache: false
+          node-version: 20
+          cache: npm
 
-      - name: Install gems (no frozen)
-        run: |
-          bundle config set path vendor/bundle
-          bundle config set frozen false
-          bundle install --jobs 4
+      - name: Install dependencies
+        run: npm install
 
-      - name: Install system deps (ImageMagick + fonts)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick unzip curl \
-            fonts-roboto fonts-font-awesome fonts-source-sans-pro || true
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v3
-
-      - name: Build CV (Typst)
-        continue-on-error: true
-        run: |
-          set -euxo pipefail
-          # Clone MyCV repo (public)
-          git clone --depth 1 https://github.com/andylizf/MyCV.git MyCV
-          cd MyCV
-          git submodule update --init --recursive || true
-          # Prepare local Typst package path for @local/modern-cv:0.7.0
-          PKG_ROOT="$GITHUB_WORKSPACE/.typst/packages/local/modern-cv/0.7.0"
-          mkdir -p "$PKG_ROOT"
-          rsync -a modern-cv/ "$PKG_ROOT/"
-          export TYPST_PACKAGE_PATHS="$GITHUB_WORKSPACE/.typst/packages"
-          export TYPST_PACKAGE_PATH="$GITHUB_WORKSPACE/.typst/packages"
-          export TYPST_FONT_PATHS="/usr/share/fonts"
-          # Compile Typst to the website's cv folder
-          mkdir -p "$GITHUB_WORKSPACE/cv"
-          typst --version
-          typst compile --root . resume.typ "$GITHUB_WORKSPACE/cv/andylizf_cv.pdf" || true
-          ls -lah "$GITHUB_WORKSPACE/cv" || true
+      - name: Build site
+        run: npm run build
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build site
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build --trace
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: ./dist
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

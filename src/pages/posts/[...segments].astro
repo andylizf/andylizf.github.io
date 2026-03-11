@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const insights = await getCollection(
+    'insights',
+    ({ data }) => !data.draft && data.date <= new Date() && !!data.permalink,
+  );
+
+  return insights.map((post) => {
+    const segments = post.data.permalink
+      ?.replace(/^\//, '')
+      .replace(/\/$/, '')
+      .split('/')
+      .slice(1)
+      .join('/');
+
+    return {
+      params: { segments },
+      props: { target: `/insights/${post.slug}/` },
+    };
+  });
+}
+
+const { target } = Astro.props;
+---
+
+<BaseLayout title="Redirecting...">
+  <meta http-equiv="refresh" content={`0;url=${target}`} />
+  <p>
+    Redirecting to <a href={target}>{target}</a> ...
+  </p>
+</BaseLayout>
