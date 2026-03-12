@@ -1,56 +1,176 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { profile, publications } from '../data/profile';
 
 const insights = (await getCollection('insights'))
   .filter((post) => !post.data.draft && post.data.date <= new Date())
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+
+const selectedPublications = publications.filter((item) => item.featured).slice(0, 5);
 ---
 
 <BaseLayout
-  title="Zhifei Li | Research + Startup"
-  description="Researcher + builder. Systems, AI infra, and venture-scale theses."
+  title="Zhifei Li | ML Systems Researcher"
+  description="Zhifei Li is a Visiting Student Researcher at UC Berkeley working on efficient systems for ML, AI infrastructure, and compound AI systems."
 >
-  <section class="hero">
-    <h1>Researcher mindset, startup velocity.</h1>
-    <p>
-      This site is a thesis engine: long-horizon bets, research-backed opinions, and builder-level
-      execution notes. Social channels test ideas quickly; this site keeps the durable narrative.
-    </p>
-  </section>
-
-  <section class="card-grid">
-    <article class="card">
-      <h3>Core Thesis</h3>
-      <p>Define what I believe will matter in AI systems over the next 2-3 years.</p>
-    </article>
-    <article class="card">
-      <h3>Signals</h3>
-      <p>Track technical, product, and market signals that update my worldview.</p>
-    </article>
-    <article class="card">
-      <h3>Builder Lens</h3>
-      <p>Translate ideas into implementable architectures, constraints, and opportunities.</p>
-    </article>
-  </section>
-
-  <section>
-    <h2>Latest Insights</h2>
-    <div class="list">
-      {insights.map((post) => (
-        <article>
-          <h3>
-            <a href={`/insights/${post.slug}/`}>{post.data.title}</a>
-          </h3>
-          <p class="meta">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'medium' })}</p>
-          <div class="tags">
-            {post.data.tags.map((tag) => (
-              <span>{tag}</span>
-            ))}
-          </div>
-        </article>
-      ))}
+  <section class="hero hero-grid">
+    <div>
+      <p class="eyebrow">ML systems researcher with a builder lens</p>
+      <h1>Zhifei Li</h1>
+      <p class="lead">{profile.headline}</p>
+      <p>{profile.summary}</p>
+      <p>{profile.researchSummary}</p>
+      <div class="cta-row">
+        <a class="button button-primary" href="/publications">View publications</a>
+        <a class="button" href="/cv/andylizf_cv.pdf">Open CV</a>
+      </div>
+      <div class="link-row">
+        {profile.links.map((link) => (
+          <a href={link.url} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
+
+    <aside class="profile-card">
+      <img class="avatar" src={profile.photo} alt="Illustrated portrait of Zhifei Li" />
+      <div class="fact-list">
+        <div>
+          <span>Current</span>
+          <strong>Sky Computing Lab, UC Berkeley</strong>
+        </div>
+        <div>
+          <span>Focus</span>
+          <strong>ML systems, cloud orchestration, AI infrastructure</strong>
+        </div>
+        <div>
+          <span>Builder side</span>
+          <strong>Open-source systems with startup relevance</strong>
+        </div>
+      </div>
+    </aside>
   </section>
+
+  <div class="page-grid">
+    <div class="page-main">
+      <section class="section-card">
+        <h2>Research Interests</h2>
+        <ul class="compact-list">
+          {profile.researchInterests.map((interest) => (
+            <li>{interest}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <h2>Selected Publications</h2>
+          <a href="/publications">View all</a>
+        </div>
+        <p class="meta">* denotes equal contribution.</p>
+        <div class="pub-list">
+          {selectedPublications.map((publication) => (
+            <article class="pub-item">
+              <h3>{publication.title}</h3>
+              <p>{publication.authors}</p>
+              <p class="meta">
+                <strong>{publication.venue}</strong>
+                {publication.note ? ` · ${publication.note}` : ''}
+              </p>
+              {publication.paperUrl && (
+                <p class="meta">
+                  <a href={publication.paperUrl} target="_blank" rel="noreferrer">
+                    Paper
+                  </a>
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Open Source and Builder Work</h2>
+        <p>{profile.builderSummary}</p>
+        <div class="pub-list">
+          {profile.openSource.map((project) => (
+            <article class="pub-item">
+              <h3>
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  {project.name}
+                </a>
+              </h3>
+              <p>{project.summary}</p>
+              <p class="meta">{project.impact}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <h2>Latest Insights</h2>
+          <a href="/insights">All insights</a>
+        </div>
+        <div class="list">
+          {insights.map((post) => (
+            <article>
+              <h3>
+                <a href={`/insights/${post.slug}/`}>{post.data.title}</a>
+              </h3>
+              <p class="meta">
+                {post.data.date.toLocaleDateString('en-US', { dateStyle: 'medium' })}
+              </p>
+              <div class="tags">
+                {post.data.tags.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar-stack">
+      <section class="section-card">
+        <h2>News</h2>
+        <ul class="timeline-list">
+          {profile.news.map((item) => (
+            <li>
+              <span>{item.date}</span>
+              <p>{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="section-card">
+        <h2>Awards</h2>
+        <ul class="compact-list">
+          {profile.awards.map((award) => (
+            <li>
+              <strong>{award.title}</strong>
+              <br />
+              <span class="meta">
+                {award.detail} · {award.date}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="section-card">
+        <h2>Service</h2>
+        <ul class="compact-list">
+          {profile.service.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    </aside>
+  </div>
 </BaseLayout>

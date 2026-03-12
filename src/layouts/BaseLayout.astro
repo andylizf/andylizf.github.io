@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Research + startup thesis engine' } = Astro.props;
+const { title, description = 'Research-first personal site with a builder lens.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,15 +24,16 @@ const { title, description = 'Research + startup thesis engine' } = Astro.props;
         <a class="brand" href="/">Zhifei Li</a>
         <nav class="nav">
           <a href="/">Home</a>
-          <a href="/about">About</a>
+          <a href="/publications">Publications</a>
           <a href="/insights">Insights</a>
+          <a href="/about">About</a>
           <a href="/cv/andylizf_cv.pdf">CV</a>
         </nav>
       </div>
     </header>
     <main>
       <slot />
-      <footer>Built with Astro for a content-first, founder-style publishing workflow.</footer>
+      <footer>Research-first site built with Astro, with room for a builder lens.</footer>
     </main>
   </body>
 </html>

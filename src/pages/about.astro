@@ -1,29 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
 ---
 
-<BaseLayout title="About | Zhifei Li" description="About Zhifei Li's research and builder background.">
-  <h1>About</h1>
-  <div class="content">
-    <p>
-      I'm a Visiting Student Researcher at
-      <a href="https://sky.cs.berkeley.edu/" target="_blank" rel="noreferrer">Sky Computing Lab</a>
-      at UC Berkeley.
-    </p>
-    <p>
-      My research focuses on efficient systems for ML, especially cloud resource orchestration,
-      distributed training infrastructure, and compound AI systems.
-    </p>
-    <p>
-      I am interested in turning research-level system ideas into builder-ready products and
-      startup theses.
-    </p>
+<BaseLayout
+  title="About | Zhifei Li"
+  description="About Zhifei Li's research agenda, affiliations, and builder-oriented work in AI systems."
+>
+  <div class="content-stack">
+    <section class="section-card">
+      <p class="eyebrow">About</p>
+      <h1>Research identity first</h1>
+      <p>{profile.summary}</p>
+      <p>{profile.researchSummary}</p>
+    </section>
 
-    <h2>Current Focus</h2>
-    <ul>
-      <li>AI infra bottlenecks and scheduling strategies</li>
-      <li>Cross-region inference systems</li>
-      <li>Research-to-product translation in open source</li>
-    </ul>
+    <section class="section-card">
+      <h2>Research Agenda</h2>
+      <ul class="compact-list">
+        {profile.researchInterests.map((interest) => (
+          <li>{interest}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Builder Lens</h2>
+      <p>{profile.builderSummary}</p>
+      <p>
+        The site should read as a normal academic homepage to researchers who care about papers,
+        affiliations, and service. The entrepreneurial layer belongs in open source, taste, and
+        how research ideas get translated into systems that people can actually use.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Links</h2>
+      <div class="link-row">
+        {profile.links.map((link) => (
+          <a href={link.url} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </section>
   </div>
 </BaseLayout>
