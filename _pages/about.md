@@ -10,7 +10,7 @@ redirect_from:
 
 ## About Me
 
-I'm a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I also work with Prof. [Joseph E. Gonzalez](https://people.eecs.berkeley.edu/~jegonzal/) and Prof. [Matei Zaharia](https://cs.stanford.edu/~matei/). I'm completing my B.S. in Computer Science (Turing Honors Class) at [Renmin University of China](https://www.ruc.edu.cn/).
+I'm an incoming Ph.D. student in Computer Science starting in Fall 2026. I previously worked as a Visiting Student Researcher at [Sky Computing Lab](https://sky.cs.berkeley.edu/) at UC Berkeley, advised by Prof. [Ion Stoica](https://people.eecs.berkeley.edu/~istoica/). I also collaborated with Prof. [Joseph E. Gonzalez](https://people.eecs.berkeley.edu/~jegonzal/) and Prof. [Matei Zaharia](https://cs.stanford.edu/~matei/). I completed my B.S. in Computer Science (Turing Honors Class) at [Renmin University of China](https://www.ruc.edu.cn/).
 
 ## Research Interests
 
@@ -20,7 +20,8 @@ My research interests lie in **designing efficient systems for ML**, focusing on
 
 - **Aug 2025**: SkyWalker accepted to EuroSys 2026!
 - **Aug 2025**: Received CCF Elite Collegiate Award (<100 recipients nationally)
-- **Jul 2025**: Started visiting UC Berkeley Sky Computing Lab
+- **Fall 2026**: Will start a Ph.D. in Computer Science
+- **Jul 2025**: Joined UC Berkeley Sky Computing Lab as a Visiting Student Researcher
 - **May 2025**: Received Dean's Scholarship, Gaoling School of AI
 
 ## Selected Publications

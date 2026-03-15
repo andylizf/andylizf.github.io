@@ -8,7 +8,7 @@ locale                   : "en-US"
 title                    : "Zhifei Li"
 title_separator          : "-"
 name                     : &name "Zhifei Li"
-description              : &description "Visiting Student Researcher at Sky Computing Lab, UC Berkeley"
+description              : &description "Incoming Ph.D. student in Computer Science"
 url                      : https://andylizf.github.io
 baseurl                  : ""
 repository               : "andylizf/andylizf.github.io"
@@ -50,7 +50,7 @@ analytics:
 author:
   name             : "Zhifei Li"
   avatar           : "profile.png"
-  bio              : "Visiting Student Researcher @ UC Berkeley"
+  bio              : "Incoming Ph.D. student in Computer Science"
   location         : "Berkeley, CA"
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=7MiEsfAAAAAJ"

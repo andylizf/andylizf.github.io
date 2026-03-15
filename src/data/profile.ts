@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Zhifei Li',
-  headline: 'Visiting Student Researcher, Sky Computing Lab, UC Berkeley',
+  headline: 'Incoming PhD student in Computer Science, Fall 2026',
   summary:
-    "I'm a Visiting Student Researcher at Sky Computing Lab at UC Berkeley, advised by Ion Stoica. I also work with Joseph E. Gonzalez and Matei Zaharia, and I am completing my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
+    "I'm an incoming PhD student in Computer Science starting in Fall 2026. I previously worked as a Visiting Student Researcher at Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
   researchSummary:
     'My work focuses on designing efficient systems for ML, with an emphasis on cloud resource orchestration, distributed training infrastructure, and compound AI systems for increasingly heterogeneous workloads.',
   builderSummary:
@@ -34,9 +34,10 @@ export const profile = {
   ],
   news: [
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
+    { date: 'Fall 2026', text: 'Will start a PhD in Computer Science.' },
     { date: 'Aug 2025', text: 'SkyWalker accepted to EuroSys 2026.' },
     { date: 'Aug 2025', text: 'Received CCF Elite Collegiate Award (<100 recipients nationally).' },
-    { date: 'Jul 2025', text: 'Started visiting UC Berkeley Sky Computing Lab.' },
+    { date: 'Jul 2025', text: 'Joined UC Berkeley Sky Computing Lab as a Visiting Student Researcher.' },
     { date: 'May 2025', text: "Received Dean's Scholarship, Gaoling School of AI." },
   ],
   awards: [
