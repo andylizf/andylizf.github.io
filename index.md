@@ -9,7 +9,7 @@ I'm an incoming Ph.D. student in Computer Science starting in Fall 2026. I previ
 
 ## Research Interests
 
-My research interests lie in **designing efficient systems for ML**, focusing on cloud resource orchestration, distributed training infrastructure, and compound AI systems addressing the growing resource demands of diverse AI applications. I am also interested in exploring how AI techniques can advance systems design methodologies.
+My research interests lie broadly in **machine learning systems**, including efficient infrastructure, training and inference systems, and systems support for emerging AI workloads. I am also interested in how AI techniques can inform systems design.
 
 ## News
 

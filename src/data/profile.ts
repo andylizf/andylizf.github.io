@@ -4,9 +4,9 @@ export const profile = {
   summary:
     "I'm an incoming PhD student in Computer Science starting in Fall 2026. I previously worked as a Visiting Student Researcher at Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
   researchSummary:
-    'My work focuses on designing efficient systems for ML, with an emphasis on cloud resource orchestration, distributed training infrastructure, and compound AI systems for increasingly heterogeneous workloads.',
+    'I work broadly on machine learning systems, with interests in efficient infrastructure, training and inference systems, and the design of systems for emerging AI workloads.',
   builderSummary:
-    'Alongside research, I care about translating systems ideas into open-source infrastructure and product-facing bets. That builder lens is part of the site, but it should not replace the research identity.',
+    'Alongside research, I care about translating ML systems ideas into practical infrastructure and widely usable tools. That builder lens is part of the site, but it should not replace the research identity.',
   photo: '/images/profile.png',
   links: [
     {
@@ -27,10 +27,10 @@ export const profile = {
     },
   ],
   researchInterests: [
-    'Efficient systems for ML',
-    'Cloud resource orchestration and scheduling',
-    'Distributed training and inference infrastructure',
-    'Compound AI systems and systems-aware AI methods',
+    'Machine learning systems',
+    'Training and inference infrastructure',
+    'Efficient systems for AI workloads',
+    'Systems support for emerging AI applications',
   ],
   news: [
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
