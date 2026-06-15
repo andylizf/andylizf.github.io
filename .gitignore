@@ -19,3 +19,9 @@ node_modules
 
 # Ignore folders related to IDEs
 .vscode/
+
+# Ignore macOS folder metadata
+.DS_Store
+
+# Ignore local Claude Code settings (keep committed skills)
+.claude/settings.local.json
