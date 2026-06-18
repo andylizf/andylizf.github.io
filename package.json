@@ -4,6 +4,9 @@
   "private": true,
   "description": "Astro-based personal site for research + startup insights.",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
