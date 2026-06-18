@@ -9,172 +9,201 @@ const insights = (await getCollection('insights'))
   .slice(0, 3);
 
 const selectedPublications = publications.filter((item) => item.featured).slice(0, 5);
+
+// Split an author string, keeping any trailing equal-contribution mark attached
+// so "Zhifei Li*" stays a single highlighted unit rather than orphaning the "*".
+function authorParts(authors: string) {
+  return authors.split(/(Zhifei Li\*?)/g);
+}
 ---
 
 <BaseLayout
   title="Zhifei Li | ML Systems Researcher"
   description="Zhifei Li is an incoming PhD student in Computer Science working broadly on machine learning systems."
 >
-  <section class="hero hero-grid">
-    <div>
-      <p class="eyebrow">ML systems researcher with a builder lens</p>
-      <h1>Zhifei Li</h1>
-      <p class="lead">{profile.headline}</p>
-      <p>{profile.summary}</p>
-      <p>{profile.researchSummary}</p>
-      <div class="cta-row">
-        <a class="button button-primary" href="/publications">View publications</a>
-        <a class="button" href="/cv/andylizf_cv.pdf">Open CV</a>
+  <section class="sheet hero">
+    <div class="hero-grid">
+      <div class="reveal reveal-1">
+        <p class="eyebrow">ML Systems · Training + Inference Infrastructure</p>
+        <h1>Zhifei Li</h1>
+        <p class="lead">{profile.headline}</p>
+        <p class="body">{profile.summary}</p>
+        <div class="cta-row">
+          <a class="button button-primary" href="/publications">View publications</a>
+          <a class="button" href="/cv/andylizf_cv.pdf">Open CV</a>
+        </div>
+        <div class="link-row">
+          {profile.links.map((link) => (
+            <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>
+          ))}
+        </div>
       </div>
-      <div class="link-row">
-        {profile.links.map((link) => (
-          <a href={link.url} target="_blank" rel="noreferrer">
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </div>
 
-    <aside class="profile-card">
-      <img class="avatar" src={profile.photo} alt="Illustrated portrait of Zhifei Li" />
-      <div class="fact-list">
-        <div>
-          <span>Current</span>
-          <strong>Incoming PhD student in Computer Science, Fall 2026</strong>
+      <aside class="profile-card reveal reveal-2">
+        <div class="avatar-frame" data-tag="Zhifei Li">
+          <img class="avatar" src={profile.photo} alt="Portrait of Zhifei Li" />
         </div>
-        <div>
-          <span>Previously</span>
-          <strong>Sky Computing Lab, UC Berkeley</strong>
-        </div>
-        <div>
-          <span>Focus</span>
-          <strong>ML systems, training and inference infrastructure</strong>
-        </div>
-        <div>
-          <span>Builder side</span>
-          <strong>Open-source systems with startup relevance</strong>
-        </div>
-      </div>
-    </aside>
+        <dl class="spec-list">
+          <div>
+            <dt>Incoming</dt>
+            <strong>Princeton CS PhD · Fall 2026</strong>
+          </div>
+          <div>
+            <dt>Advised by</dt>
+            <strong>Tri Dao · Ravi Netravali</strong>
+          </div>
+          <div>
+            <dt>Previously</dt>
+            <strong>Sky Computing Lab · UC Berkeley</strong>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <strong>Training · Inference · Efficiency</strong>
+          </div>
+          <div>
+            <dt>Builder</dt>
+            <strong>30k★ contributed · 40k+ users</strong>
+          </div>
+        </dl>
+      </aside>
+    </div>
   </section>
 
-  <div class="page-grid">
-    <div class="page-main">
-      <section class="section-card">
-        <h2>Research Interests</h2>
-        <ul class="compact-list">
-          {profile.researchInterests.map((interest) => (
-            <li>{interest}</li>
-          ))}
-        </ul>
-      </section>
+  <div class="sheet region">
+    <div class="page-grid">
+      <div class="page-main">
+        <section class="block">
+          <p class="eyebrow">Research</p>
+          <h2>Research interests</h2>
+          <ul class="interests">
+            {profile.researchInterests.map((interest) => (
+              <li>{interest}</li>
+            ))}
+          </ul>
+          <p class="research-note">{profile.researchSummary}</p>
+        </section>
 
-      <section class="section-card">
-        <div class="section-header">
-          <h2>Selected Publications</h2>
-          <a href="/publications">View all</a>
-        </div>
-        <p class="meta">* denotes equal contribution.</p>
-        <div class="pub-list">
-          {selectedPublications.map((publication) => (
-            <article class="pub-item">
-              <h3>{publication.title}</h3>
-              <p>{publication.authors}</p>
-              <p class="meta">
-                <strong>{publication.venue}</strong>
-                {publication.note ? ` · ${publication.note}` : ''}
-              </p>
-              {publication.paperUrl && (
-                <p class="meta">
-                  <a href={publication.paperUrl} target="_blank" rel="noreferrer">
-                    Paper
-                  </a>
+        <section class="block">
+          <div class="region-head">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2>Publications</h2>
+            </div>
+            <a class="more" href="/publications">All publications</a>
+          </div>
+          <div class="pub-list">
+            {selectedPublications.map((publication) => (
+              <article class="pub-item">
+                <div class="pub-tags">
+                  <span class="venue-chip">{publication.venue}</span>
+                  {publication.honor && <span class="honor-chip">{publication.honor}</span>}
+                  {publication.note && <span class="note-chip">{publication.note}</span>}
+                </div>
+                <h3>
+                  {publication.paperUrl
+                    ? <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title}</a>
+                    : publication.title}
+                </h3>
+                <p class="pub-authors">
+                  {authorParts(publication.authors).map((part) =>
+                    /^Zhifei Li/.test(part) ? (
+                      <span class="me">Zhifei Li{part.endsWith('*') && (
+                        <sup class="eq" aria-label="equal contribution">*</sup>
+                      )}</span>
+                    ) : (
+                      part
+                    ),
+                  )}
                 </p>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
+                {publication.paperUrl && (
+                  <div class="pub-meta">
+                    <a href={publication.paperUrl} target="_blank" rel="noreferrer">Paper</a>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+          <p class="meta research-note">* denotes equal contribution.</p>
+        </section>
 
-      <section class="section-card">
-        <h2>Open Source and Builder Work</h2>
-        <p>{profile.builderSummary}</p>
-        <div class="pub-list">
-          {profile.openSource.map((project) => (
-            <article class="pub-item">
-              <h3>
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  {project.name}
-                </a>
-              </h3>
-              <p>{project.summary}</p>
-              <p class="meta">{project.impact}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section class="block">
+          <p class="eyebrow">Builder lens</p>
+          <h2>Open source</h2>
+          <div class="oss-list">
+            {profile.openSource.map((project) => (
+              <article class="oss-item">
+                <h3>
+                  <a href={project.url} target="_blank" rel="noreferrer">{project.name}</a>
+                </h3>
+                <p>{project.summary}</p>
+                <ul class="oss-metrics">
+                  {project.metrics.map((metric) => (<li>{metric}</li>))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section class="section-card">
-        <div class="section-header">
-          <h2>Latest Insights</h2>
-          <a href="/insights">All insights</a>
-        </div>
-        <div class="list">
-          {insights.map((post) => (
-            <article>
-              <h3>
-                <a href={`/insights/${post.slug}/`}>{post.data.title}</a>
-              </h3>
-              <p class="meta">
-                {post.data.date.toLocaleDateString('en-US', { dateStyle: 'medium' })}
-              </p>
-              <div class="tags">
-                {post.data.tags.map((tag) => (
-                  <span>{tag}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section class="block">
+          <div class="region-head">
+            <div>
+              <p class="eyebrow">Writing</p>
+              <h2>Latest insights</h2>
+            </div>
+            <a class="more" href="/insights">All insights</a>
+          </div>
+          <div class="entry-list">
+            {insights.map((post) => (
+              <article class="entry">
+                <h3><a href={`/insights/${post.slug}/`}>{post.data.title}</a></h3>
+                <p class="date">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'medium' })}</p>
+                <div class="tags">
+                  {post.data.tags.map((tag) => (<span>{tag}</span>))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar-stack">
+        <section class="block">
+          <p class="eyebrow">Log</p>
+          <h2>News</h2>
+          <ul class="log">
+            {profile.news.map((item) => (
+              <li>
+                <time>{item.date}</time>
+                <p>{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="block">
+          <p class="eyebrow">Honors</p>
+          <h2>Awards</h2>
+          <ul class="awards">
+            {profile.awards.map((award) => (
+              <li>
+                <div class="title">
+                  <strong>{award.title}</strong>
+                  <time>{award.date}</time>
+                </div>
+                <p class="detail">{award.detail}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="block">
+          <p class="eyebrow">Community</p>
+          <h2>Service</h2>
+          <ul class="service">
+            {profile.service.map((item) => (<li>{item}</li>))}
+          </ul>
+        </section>
+      </aside>
     </div>
-
-    <aside class="sidebar-stack">
-      <section class="section-card">
-        <h2>News</h2>
-        <ul class="timeline-list">
-          {profile.news.map((item) => (
-            <li>
-              <span>{item.date}</span>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="section-card">
-        <h2>Awards</h2>
-        <ul class="compact-list">
-          {profile.awards.map((award) => (
-            <li>
-              <strong>{award.title}</strong>
-              <br />
-              <span class="meta">
-                {award.detail} · {award.date}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="section-card">
-        <h2>Service</h2>
-        <ul class="compact-list">
-          {profile.service.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </section>
-    </aside>
   </div>
 </BaseLayout>

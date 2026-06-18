@@ -8,21 +8,23 @@ const insights = (await getCollection('insights'))
 ---
 
 <BaseLayout title="Insights | Zhifei Li" description="Weekly insight memos and flagship essays.">
-  <h1>Insights</h1>
-  <p class="meta">Weekly insight memos, monthly flagship essays, and durable thesis updates.</p>
-  <div class="list">
-    {insights.map((post) => (
-      <article>
-        <h2>
-          <a href={`/insights/${post.slug}/`}>{post.data.title}</a>
-        </h2>
-        <p class="meta">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
-        <div class="tags">
-          {post.data.tags.map((tag) => (
-            <span>{tag}</span>
-          ))}
-        </div>
-      </article>
-    ))}
+  <section class="sheet page-title">
+    <p class="eyebrow">Insights</p>
+    <h1>Notes &amp; essays</h1>
+    <p class="meta">Weekly insight memos, monthly flagship essays, and durable thesis updates.</p>
+  </section>
+
+  <div class="sheet region">
+    <div class="entry-list" style="max-width:72ch">
+      {insights.map((post) => (
+        <article class="entry">
+          <h2><a href={`/insights/${post.slug}/`}>{post.data.title}</a></h2>
+          <p class="date">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
+          <div class="tags">
+            {post.data.tags.map((tag) => (<span>{tag}</span>))}
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 </BaseLayout>

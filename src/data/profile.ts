@@ -1,17 +1,21 @@
 export const profile = {
   name: 'Zhifei Li',
-  headline: 'Incoming PhD student in Computer Science, Fall 2026',
+  headline: 'Incoming Computer Science PhD at Princeton University, Fall 2026',
   summary:
-    "I'm an incoming PhD student in Computer Science starting in Fall 2026. I previously worked as a Visiting Student Researcher at Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
+    "I'm an incoming PhD student in Computer Science at Princeton University, starting in Fall 2026, where I will be advised by Tri Dao and Ravi Netravali. I previously worked as a Visiting Student Researcher at the Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
   researchSummary:
     'I work broadly on machine learning systems, with interests in efficient infrastructure, training and inference systems, and the design of systems for emerging AI workloads.',
   builderSummary:
-    'Alongside research, I care about translating ML systems ideas into practical infrastructure and widely usable tools. That builder lens is part of the site, but it should not replace the research identity.',
+    'Alongside research, I translate ML systems ideas into infrastructure and tools that people actually use — from a high-availability controller running in production to a vector index with tens of thousands of users.',
   photo: '/images/profile.png',
   links: [
     {
       label: 'Google Scholar',
       url: 'https://scholar.google.com/citations?user=7MiEsfAAAAAJ',
+    },
+    {
+      label: 'ORCID',
+      url: 'https://orcid.org/0009-0003-1488-4871',
     },
     {
       label: 'GitHub',
@@ -33,8 +37,9 @@ export const profile = {
     'Systems support for emerging AI applications',
   ],
   news: [
+    { date: 'May 2026', text: 'LEANN received the Best Paper Award at MLSys 2026.' },
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
-    { date: 'Fall 2026', text: 'Will start a PhD in Computer Science.' },
+    { date: 'Fall 2026', text: 'Will start a CS PhD at Princeton University, advised by Tri Dao and Ravi Netravali.' },
     { date: 'Aug 2025', text: 'SkyWalker accepted to EuroSys 2026.' },
     { date: 'Aug 2025', text: 'Received CCF Elite Collegiate Award (<100 recipients nationally).' },
     { date: 'Jul 2025', text: 'Joined UC Berkeley Sky Computing Lab as a Visiting Student Researcher.' },
@@ -42,9 +47,24 @@ export const profile = {
   ],
   awards: [
     {
+      title: 'Beijing Municipal Outstanding Graduate',
+      detail: '北京市优秀毕业生, top 5% of graduates citywide',
+      date: 'Jun 2026',
+    },
+    {
+      title: 'Wu Yuzhang Scholarship',
+      detail: "吴玉章奖学金, RUC's highest student honor, ≤10 recipients/year",
+      date: 'Dec 2025',
+    },
+    {
       title: 'CCF Elite Collegiate Award',
       detail: 'CCF优秀大学生奖, <100 recipients nationally',
       date: 'Aug 2025',
+    },
+    {
+      title: 'Pioneer Medal',
+      detail: '先锋奖章, Renmin University of China',
+      date: '2025',
     },
     {
       title: "Dean's Scholarship",
@@ -76,14 +96,16 @@ export const profile = {
     {
       name: 'SkyPilot',
       url: 'https://github.com/skypilot-org/skypilot',
-      summary: 'Top 10 contributor; 70+ issues, 50+ PRs merged; 30,000+ lines of code contributed.',
-      impact: 'Built the High Availability Controller for SkyServe, later adopted by startups including Hypermode.',
+      metrics: ['Top 10 contributor', '50+ PRs merged', '30k+ LOC'],
+      summary:
+        'Built the High Availability Controller for SkyServe, later adopted by startups including Hypermode.',
     },
     {
       name: 'LEANN',
       url: 'https://github.com/yichuan-w/LEANN',
-      summary: 'Led research-to-production translation; 40k+ community downloads.',
-      impact: 'Technical outreach around the project reached 600k+ views.',
+      metrics: ['40k+ downloads', '600k+ reach', 'research → production'],
+      summary:
+        'Led the research-to-production translation of a low-storage vector index for personal devices.',
     },
   ],
 } as const;
@@ -115,6 +137,7 @@ export const publications = [
       'Yichuan Wang, Zhifei Li, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez',
     venue: 'MLSys 2026',
     note: 'To appear',
+    honor: 'Best Paper Award',
     paperUrl: 'https://arxiv.org/abs/2506.08276',
     featured: true,
   },
@@ -124,7 +147,7 @@ export const publications = [
     authors:
       'Audrey Cheng*, Shu Liu*, Melissa Pan*, Zhifei Li, Bowen Wang, Alex Krentsel, Tian Xia, Mert Cemri, Jongseok Park, Shuo Yang, Jeff Chen, Aditya Desai, Jiarong Xing, Koushik Sen, Matei Zaharia, Ion Stoica',
     venue: 'arXiv',
-    note: '2024',
+    note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2510.06189',
     featured: true,
   },
@@ -134,7 +157,7 @@ export const publications = [
     authors:
       'Qiuyang Mang*, Wenhao Cai*, Zhifei Li*, Huanzhi Mao*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung',
     venue: 'arXiv',
-    note: '2024',
+    note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2512.15699',
     featured: true,
   },

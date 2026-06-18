@@ -15,15 +15,18 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={`${post.data.title} | Insights`}>
-  <article class="content">
-    <h1>{post.data.title}</h1>
-    <p class="meta">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
-    <div class="tags">
-      {post.data.tags.map((tag: string) => (
-        <span>{tag}</span>
-      ))}
-    </div>
-    <hr />
-    <Content />
-  </article>
+  <div class="sheet region">
+    <article class="content">
+      <p class="eyebrow">Insight</p>
+      <h1>{post.data.title}</h1>
+      <p class="meta">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
+      <div class="tags">
+        {post.data.tags.map((tag: string) => (
+          <span>{tag}</span>
+        ))}
+      </div>
+      <hr />
+      <Content />
+    </article>
+  </div>
 </BaseLayout>

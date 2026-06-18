@@ -3,52 +3,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { publications } from '../data/profile';
 
 const groupedPublications = Object.entries(
-  publications.reduce<Record<string, typeof publications>>((groups, publication) => {
+  publications.reduce<Record<string, typeof publications[number][]>>((groups, publication) => {
     const key = String(publication.year);
-    if (!groups[key]) {
-      groups[key] = [];
-    }
-
-    groups[key].push(publication);
+    (groups[key] ??= []).push(publication);
     return groups;
   }, {}),
 ).sort((a, b) => Number(b[0]) - Number(a[0]));
+
+function authorParts(authors: string) {
+  return authors.split(/(Zhifei Li\*?)/g);
+}
 ---
 
 <BaseLayout
   title="Publications | Zhifei Li"
   description="Selected publications and preprints by Zhifei Li in machine learning systems."
 >
-  <div class="content-stack">
-    <section class="section-card">
-      <p class="eyebrow">Publications</p>
-      <h1>Research output</h1>
-      <p class="meta">* denotes equal contribution.</p>
-    </section>
+  <section class="sheet page-title">
+    <p class="eyebrow">Publications</p>
+    <h1>Research output</h1>
+    <p class="meta">* denotes equal contribution.</p>
+  </section>
 
-    {groupedPublications.map(([year, items]) => (
-      <section class="section-card">
-        <h2>{year}</h2>
-        <div class="pub-list">
-          {items.map((publication) => (
-            <article class="pub-item">
-              <h3>{publication.title}</h3>
-              <p>{publication.authors}</p>
-              <p class="meta">
-                <strong>{publication.venue}</strong>
-                {publication.note ? ` · ${publication.note}` : ''}
-              </p>
-              {publication.paperUrl && (
-                <p class="meta">
-                  <a href={publication.paperUrl} target="_blank" rel="noreferrer">
-                    Paper
-                  </a>
-                </p>
+  {groupedPublications.map(([year, items]) => (
+    <section class="sheet region">
+      <div class="year-head">
+        {year}
+        <span class="count">{items.length} {items.length === 1 ? 'entry' : 'entries'}</span>
+      </div>
+      <div class="pub-list">
+        {items.map((publication) => (
+          <article class="pub-item">
+            <div class="pub-tags">
+              <span class="venue-chip">{publication.venue}</span>
+              {publication.honor && <span class="honor-chip">{publication.honor}</span>}
+              {publication.note && <span class="note-chip">{publication.note}</span>}
+            </div>
+            <h3>
+              {publication.paperUrl
+                ? <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title}</a>
+                : publication.title}
+            </h3>
+            <p class="pub-authors">
+              {authorParts(publication.authors).map((part) =>
+                /^Zhifei Li/.test(part) ? (
+                  <span class="me">Zhifei Li{part.endsWith('*') && (
+                    <sup class="eq" aria-label="equal contribution">*</sup>
+                  )}</span>
+                ) : (
+                  part
+                ),
               )}
-            </article>
-          ))}
-        </div>
-      </section>
-    ))}
-  </div>
+            </p>
+            {publication.paperUrl && (
+              <div class="pub-meta">
+                <a href={publication.paperUrl} target="_blank" rel="noreferrer">Paper</a>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
 </BaseLayout>

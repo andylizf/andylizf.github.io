@@ -1,4 +1,8 @@
 ---
+import '@fontsource-variable/hanken-grotesk';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-mono/600.css';
 import '../styles/global.css';
 
 interface Props {
@@ -6,24 +10,27 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Research-first personal site with a builder lens.' } = Astro.props;
+const { title, description = 'Zhifei Li — machine learning systems researcher and builder.' } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/images/favicon.ico" sizes="any" />
     <title>{title}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="site-header-inner">
+      <div class="sheet site-header-inner">
         <a class="brand" href="/">Zhifei Li</a>
         <nav class="nav">
-          <a href="/">Home</a>
+          <a href="/">Index</a>
           <a href="/publications">Publications</a>
           <a href="/insights">Insights</a>
           <a href="/about">About</a>
@@ -31,9 +38,14 @@ const { title, description = 'Research-first personal site with a builder lens.'
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main">
       <slot />
-      <footer>Research-first site built with Astro, with room for a builder lens.</footer>
     </main>
+    <footer class="site-footer">
+      <div class="sheet site-footer-inner">
+        <span>Zhifei Li · ML Systems</span>
+        <span>Built with Astro · &copy; {year}</span>
+      </div>
+    </footer>
   </body>
 </html>

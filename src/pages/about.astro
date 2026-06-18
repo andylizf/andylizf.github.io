@@ -7,42 +7,66 @@ import { profile } from '../data/profile';
   title="About | Zhifei Li"
   description="About Zhifei Li's research agenda, affiliations, and builder-oriented work in AI systems."
 >
-  <div class="content-stack">
-    <section class="section-card">
-      <p class="eyebrow">About</p>
-      <h1>Research identity first</h1>
-      <p>{profile.summary}</p>
-      <p>{profile.researchSummary}</p>
-    </section>
+  <section class="sheet page-title">
+    <p class="eyebrow">About</p>
+    <h1>Research identity first</h1>
+  </section>
 
-    <section class="section-card">
-      <h2>Research Agenda</h2>
-      <ul class="compact-list">
-        {profile.researchInterests.map((interest) => (
-          <li>{interest}</li>
-        ))}
-      </ul>
-    </section>
+  <div class="sheet region">
+    <div class="about-grid">
+      <div class="content-stack">
+        <section class="block">
+          <p class="lead">{profile.summary}</p>
+          <p class="research-note">{profile.researchSummary}</p>
+        </section>
 
-    <section class="section-card">
-      <h2>Builder Lens</h2>
-      <p>{profile.builderSummary}</p>
-      <p>
-        The site should read as a normal academic homepage to researchers who care about papers,
-        affiliations, and service. The entrepreneurial layer belongs in open source, taste, and
-        how research ideas get translated into systems that people can actually use.
-      </p>
-    </section>
+        <section class="block">
+          <p class="eyebrow">Agenda</p>
+          <h2>Research agenda</h2>
+          <ul class="interests">
+            {profile.researchInterests.map((interest) => (<li>{interest}</li>))}
+          </ul>
+        </section>
 
-    <section class="section-card">
-      <h2>Links</h2>
-      <div class="link-row">
-        {profile.links.map((link) => (
-          <a href={link.url} target="_blank" rel="noreferrer">
-            {link.label}
-          </a>
-        ))}
+        <section class="block">
+          <p class="eyebrow">Builder lens</p>
+          <h2>Systems ideas into tools people use</h2>
+          <p>{profile.builderSummary}</p>
+          <p>
+            On <a href="https://github.com/skypilot-org/skypilot" target="_blank" rel="noreferrer">SkyPilot</a>,
+            I built the High Availability Controller for SkyServe — the layer that keeps model serving
+            online across node and region failures — now adopted by startups including Hypermode. On
+            <a href="https://github.com/yichuan-w/LEANN" target="_blank" rel="noreferrer">LEANN</a>, I led the
+            push from research prototype to a low-storage vector index that runs on personal devices, with
+            tens of thousands of downloads and a Best Paper Award at MLSys 2026.
+          </p>
+        </section>
       </div>
-    </section>
+
+      <aside class="meta-rail">
+        <div>
+          <p class="block-head">Incoming</p>
+          <p>CS PhD, Princeton University · Fall 2026</p>
+        </div>
+        <div>
+          <p class="block-head">Advised by</p>
+          <p>Tri Dao · Ravi Netravali</p>
+        </div>
+        <div>
+          <p class="block-head">Previously</p>
+          <p>Visiting Student Researcher, Sky Computing Lab, UC Berkeley</p>
+        </div>
+        <div>
+          <p class="block-head">Education</p>
+          <p>B.S. in Computer Science, Turing Honors Class, Renmin University of China</p>
+        </div>
+        <div>
+          <p class="block-head">Elsewhere</p>
+          {profile.links.map((link) => (
+            <a href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>
+          ))}
+        </div>
+      </aside>
+    </div>
   </div>
 </BaseLayout>
