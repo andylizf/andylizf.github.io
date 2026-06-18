@@ -141,7 +141,7 @@ export const publications = [
     featured: true,
   },
   {
-    year: 2024,
+    year: 2025,
     title: 'Barbarians at the Gate: How AI is Upending Systems Research',
     authors:
       'Audrey Cheng*, Shu Liu*, Melissa Pan*, Zhifei Li, Bowen Wang, Alex Krentsel, Tian Xia, Mert Cemri, Jongseok Park, Shuo Yang, Jeff Chen, Aditya Desai, Jiarong Xing, Koushik Sen, Matei Zaharia, Ion Stoica',
