@@ -31,8 +31,6 @@
   /* structure */
   --line: #d6d9d2;
   --line-strong: #c2c6bd;
-  --grid: rgba(21, 23, 26, 0.055);     /* minor cell */
-  --grid-major: rgba(21, 23, 26, 0.09); /* every 5th line — engineering drawing */
 
   /* accents */
   --accent: #2438c8;          /* blueprint cobalt — interactive + structural marks */
@@ -70,14 +68,6 @@ body {
   font-family: var(--sans);
   color: var(--ink);
   background-color: var(--paper);
-  /* engineering grid: minor 30px cells + major line every 150px */
-  background-image:
-    linear-gradient(var(--grid-major) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px;
-  background-position: -1px -1px;
   line-height: 1.6;
   font-size: 17px;
   font-weight: 400;
@@ -288,9 +278,10 @@ main { display: block; }
   margin-bottom: 1.2rem;
 }
 .hero .body {
-  color: var(--muted);
-  max-width: 56ch;
-  font-size: 0.98rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
 .cta-row {
@@ -381,7 +372,7 @@ main { display: block; }
   position: absolute;
   left: 0; bottom: 0;
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--surface);
@@ -392,20 +383,20 @@ main { display: block; }
 .spec-list { display: grid; margin-top: 0.5rem; }
 .spec-list div {
   display: grid;
-  gap: 0.15rem;
-  padding: 0.7rem 0.5rem;
+  gap: 0.2rem;
+  padding: 0.6rem 0.5rem;
   border-top: 1px solid var(--line);
 }
 .spec-list div:first-child { border-top: 0; }
 .spec-list dt {
   font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  letter-spacing: 0.085em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .spec-list strong {
-  font-size: 0.94rem;
+  font-size: 0.97rem;
   font-weight: 550;
   color: var(--ink);
   letter-spacing: -0.01em;
@@ -416,7 +407,7 @@ main { display: block; }
 .page-grid {
   display: grid;
   grid-template-columns: var(--rail);
-  gap: var(--rail-gap);
+  gap: 0;
 }
 .page-main,
 .sidebar-stack,
@@ -424,6 +415,13 @@ main { display: block; }
   display: grid;
   gap: clamp(2.2rem, 5vw, 3.2rem);
   align-content: start;
+}
+/* single vertical column rule separates the two panels so their
+   horizontal item-dividers never read as staggered against each other */
+.page-main { padding-right: var(--rail-gap); }
+.sidebar-stack {
+  border-left: 1px solid var(--line);
+  padding-left: var(--rail-gap);
 }
 
 .block h2 {
@@ -471,7 +469,7 @@ ul.interests { margin: 0; padding: 0; }
 }
 .venue-chip {
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -484,7 +482,7 @@ ul.interests { margin: 0; padding: 0; }
 }
 .note-chip {
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
@@ -492,7 +490,7 @@ ul.interests { margin: 0; padding: 0; }
 /* the one reserved honor signal */
 .honor-chip {
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -556,7 +554,7 @@ ul.interests { margin: 0; padding: 0; }
 .oss-metrics li {
   list-style: none;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
   border: 1px solid var(--line);
@@ -600,7 +598,7 @@ ul.interests { margin: 0; padding: 0; }
 .awards .title strong { font-size: 0.96rem; font-weight: 600; letter-spacing: -0.01em; }
 .awards .title time {
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--faint);
@@ -650,7 +648,7 @@ ul.interests { margin: 0; padding: 0; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; }
 .tags span {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.03em;
   color: var(--muted);
   border: 1px solid var(--line);
@@ -674,12 +672,19 @@ ul.interests { margin: 0; padding: 0; }
 .page-title .meta { color: var(--muted); font-size: 0.95rem; }
 
 /* about page: thin mono meta rail to mirror home/pubs grid */
-.about-grid { display: grid; grid-template-columns: var(--rail); gap: var(--rail-gap); }
-.meta-rail { display: grid; gap: 1.4rem; align-content: start; }
+.about-grid { display: grid; grid-template-columns: var(--rail); gap: 0; }
+.about-grid > .content-stack { padding-right: var(--rail-gap); }
+.meta-rail {
+  display: grid;
+  gap: 1.4rem;
+  align-content: start;
+  border-left: 1px solid var(--line);
+  padding-left: var(--rail-gap);
+}
 .meta-rail .block-head {
   font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  letter-spacing: 0.085em;
   text-transform: uppercase;
   color: var(--faint);
   margin-bottom: 0.5rem;
@@ -793,6 +798,16 @@ ul.interests { margin: 0; padding: 0; }
   .page-grid,
   .about-grid { grid-template-columns: 1fr; }
   .profile-card { max-width: 360px; }
+  /* drop the vertical column rule when columns stack */
+  .page-main,
+  .about-grid > .content-stack { padding-right: 0; }
+  .sidebar-stack,
+  .meta-rail {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: clamp(2.2rem, 6vw, 3rem);
+  }
 }
 
 @media (max-width: 560px) {
