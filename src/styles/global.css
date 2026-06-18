@@ -324,7 +324,7 @@ main { display: block; }
 }
 .link-row a {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--muted);
   letter-spacing: 0.01em;
 }
@@ -691,7 +691,7 @@ ul.interests { margin: 0; padding: 0; }
 }
 .meta-rail div + div { border-top: 1px solid var(--line); padding-top: 1.4rem; }
 .meta-rail p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
-.meta-rail a { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); display: block; }
+.meta-rail a { font-family: var(--mono); font-size: 0.9rem; color: var(--muted); display: block; }
 .meta-rail a:hover { color: var(--accent); text-decoration: none; }
 
 .year-head {
