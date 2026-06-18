@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Personal website for **Zhifei Li** (ML systems researcher), served at **zhifei.li**.
-Astro 5, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
+Astro 6, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
 
 ## Commands
 
@@ -16,8 +16,9 @@ npm run check     # astro check (type/diagnostics)
 
 - `src/data/profile.ts` — **single source of truth** for all site content: bio, `publications`,
   `awards`, `news`, `openSource`, `service`, `links`. Exported `as const`. Edit data here, not in pages.
-- `src/content/insights/*.md` — blog posts (Astro content collection `insights`; schema in
-  `src/content.config.ts`: `title`, `date`, `tags`, `draft?`, `permalink?`).
+- `src/content/insights/*.md` — blog posts (Astro content collection `insights` via the `glob`
+  loader; schema in `src/content.config.ts`: `title`, `date`, `tags`, `draft?`, `permalink?`).
+  Entry id is the filename (no extension); use `post.id` for routes, not `post.slug`.
 - `src/pages/*.astro` — routes: `index`, `publications`, `about`, `insights/`, `insights/[slug]`.
   `posts/[...segments]` redirects old permalinks to `/insights/...`.
 - `src/layouts/BaseLayout.astro` — shell: head, fonts, nav, footer, skip link.

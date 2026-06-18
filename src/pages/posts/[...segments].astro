@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
     return {
       params: { segments },
-      props: { target: `/insights/${post.slug}/` },
+      props: { target: `/insights/${post.id}/` },
     };
   });
 }

@@ -165,7 +165,7 @@ function authorParts(authors: string) {
           <div class="entry-list">
             {insights.map((post) => (
               <article class="entry">
-                <h3><a href={`/insights/${post.slug}/`}>{post.data.title}</a></h3>
+                <h3><a href={`/insights/${post.id}/`}>{post.data.title}</a></h3>
                 <p class="date">{post.data.date.toLocaleDateString('en-US', { dateStyle: 'medium' })}</p>
                 <div class="tags">
                   {post.data.tags.map((tag) => (<span>{tag}</span>))}
