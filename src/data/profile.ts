@@ -40,7 +40,6 @@ export const profile = {
     { date: 'May 2026', text: 'LEANN received the Best Paper Award at MLSys 2026.' },
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
     { date: 'Fall 2026', text: 'Will start a CS PhD at Princeton University, advised by Tri Dao and Ravi Netravali.' },
-    { date: 'Aug 2025', text: 'SkyWalker accepted to EuroSys 2026.' },
     { date: 'Aug 2025', text: 'Received CCF Elite Collegiate Award (<100 recipients nationally).' },
     { date: 'Jul 2025', text: 'Joined UC Berkeley Sky Computing Lab as a Visiting Student Researcher.' },
     { date: 'May 2025', text: "Received Dean's Scholarship, Gaoling School of AI." },
@@ -113,25 +112,6 @@ export const profile = {
 export const publications = [
   {
     year: 2026,
-    title: 'SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference',
-    authors:
-      'Tian Xia, Ziming Mao, Jamison Kerney, Ethan J. Jackson, Zhifei Li, Jiarong Xing, Scott Shenker, Ion Stoica',
-    venue: 'EuroSys 2026',
-    note: 'Preprint',
-    paperUrl: 'https://arxiv.org/abs/2505.24095v2',
-    featured: true,
-  },
-  {
-    year: 2026,
-    title: 'SkyNomad: Cost-Effective Multi-Region Scheduling for Deadline-Sensitive Workloads on Spot Instances',
-    authors: 'Zhifei Li*, Tian Xia*, and others, Ion Stoica',
-    venue: 'OSDI 2026',
-    note: 'In submission',
-    paperUrl: 'https://arxiv.org/abs/2601.06520',
-    featured: true,
-  },
-  {
-    year: 2026,
     title: 'LEANN: A Low-Storage Vector Index for Personal Devices',
     authors:
       'Yichuan Wang, Zhifei Li, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez',
@@ -139,6 +119,15 @@ export const publications = [
     note: 'To appear',
     honor: 'Best Paper Award',
     paperUrl: 'https://arxiv.org/abs/2506.08276',
+    featured: true,
+  },
+  {
+    year: 2026,
+    title: 'SkyNomad: Cost-Effective Multi-Region Scheduling for Deadline-Sensitive Workloads on Spot Instances',
+    authors: 'Zhifei Li*, Tian Xia*, and others, Ion Stoica',
+    venue: 'NSDI 2026',
+    note: 'In submission',
+    paperUrl: 'https://arxiv.org/abs/2601.06520',
     featured: true,
   },
   {
