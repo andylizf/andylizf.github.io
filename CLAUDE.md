@@ -59,9 +59,3 @@ Drawn from the ML-systems + builder identity. Deliberately avoids the cream/terr
 - **Gotcha**: if the deploy job is rejected with "Branch main is not allowed to deploy", the
   `github-pages` environment's deployment-branch-policies is missing `main` — add it there.
 - Verify live after deploy: `curl -s https://zhifei.li/ | grep <marker>` and check the Actions run.
-
-## Notes
-
-- `scripts/` holds a CV markdown→json helper (legacy academicpages CV workflow; not used by the Astro build).
-- `old_content_backup/` is an archive of 2020 blog posts kept for reference; not built or served.
-- Commit messages and all repo-visible text in English. Don't commit `.claude/settings*.json` (gitignored).
