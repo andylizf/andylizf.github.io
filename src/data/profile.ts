@@ -54,7 +54,7 @@ export const profile = {
     {
       title: 'Wu Yuzhang Scholarship',
       detail: "吴玉章奖学金, RUC's highest student honor, ≤10 recipients/year",
-      date: 'Dec 2025',
+      date: 'May 2026',
     },
     {
       title: 'CCF Elite Collegiate Award',
@@ -64,7 +64,7 @@ export const profile = {
     {
       title: 'Pioneer Medal',
       detail: '先锋奖章, Renmin University of China',
-      date: '2025',
+      date: 'May 2026',
     },
     {
       title: "Dean's Scholarship",
