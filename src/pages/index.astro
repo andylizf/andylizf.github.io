@@ -10,6 +10,16 @@ const insights = (await getCollection('insights'))
 
 const selectedPublications = publications.filter((item) => item.featured).slice(0, 5);
 
+// Sort awards newest-first from their "MMM YYYY" (or "YYYY") date strings,
+// so the list stays chronological no matter what order they're authored in.
+function awardRank(date: string): number {
+  const match = date.match(/^(?:([A-Za-z]+)\s+)?(\d{4})$/);
+  if (!match) return 0;
+  const month = match[1] ? new Date(`${match[1]} 1, 2000`).getMonth() : 0;
+  return Number(match[2]) * 12 + month;
+}
+const sortedAwards = [...profile.awards].sort((a, b) => awardRank(b.date) - awardRank(a.date));
+
 // Split an author string, keeping any trailing equal-contribution mark attached
 // so "Zhifei Li*" stays a single highlighted unit rather than orphaning the "*".
 function authorParts(authors: string) {
@@ -184,7 +194,7 @@ function authorParts(authors: string) {
           <p class="eyebrow">Honors</p>
           <h2>Awards</h2>
           <ul class="awards">
-            {profile.awards.map((award) => (
+            {sortedAwards.map((award) => (
               <li>
                 <div class="title">
                   <strong>{award.title}</strong>
