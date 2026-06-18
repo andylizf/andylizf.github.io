@@ -131,6 +131,16 @@ export const publications = [
     featured: true,
   },
   {
+    year: 2026,
+    title: 'FrontierCS: Evolving Challenges for Evolving Intelligence',
+    authors:
+      'Qiuyang Mang*, Wenhao Chai*, Zhifei Li*, Huanzhi Mao*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung',
+    venue: 'ICML 2026',
+    note: 'To appear',
+    paperUrl: 'https://arxiv.org/abs/2512.15699',
+    featured: true,
+  },
+  {
     year: 2024,
     title: 'Barbarians at the Gate: How AI is Upending Systems Research',
     authors:
@@ -138,16 +148,6 @@ export const publications = [
     venue: 'arXiv',
     note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2510.06189',
-    featured: true,
-  },
-  {
-    year: 2024,
-    title: 'FrontierCS: The Next Frontier of Computer Science',
-    authors:
-      'Qiuyang Mang*, Wenhao Cai*, Zhifei Li*, Huanzhi Mao*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung',
-    venue: 'arXiv',
-    note: 'Preprint',
-    paperUrl: 'https://arxiv.org/abs/2512.15699',
     featured: true,
   },
 ] as const;
