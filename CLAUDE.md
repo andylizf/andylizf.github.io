@@ -1,8 +1,7 @@
 # CLAUDE.md
 
 Personal website for **Zhifei Li** (ML systems researcher), served at **zhifei.li**.
-Astro 5, no UI framework, hand-written CSS. Migrated off Jekyll/academicpages — ignore any
-stray Jekyll conventions; everything live is under `src/` and `public/`.
+Astro 5, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
 
 ## Commands
 
@@ -24,7 +23,7 @@ npm run check     # astro check (type/diagnostics)
 - `src/layouts/BaseLayout.astro` — shell: head, fonts, nav, footer, skip link.
 - `src/styles/global.css` — the entire design system (see below).
 - `public/` — served at site root: `public/images/`, `public/cv/andylizf_cv.pdf`, `public/CNAME`
-  (custom domain). Reference as `/images/...`, `/cv/...`. There is no root-level assets dir anymore.
+  (custom domain). Reference as `/images/...`, `/cv/...`.
 
 ## Editing conventions
 
@@ -57,9 +56,8 @@ Drawn from the ML-systems + builder identity. Deliberately avoids the cream/terr
 ## Deploy
 
 - Push to `main` → GitHub Actions (`.github/workflows/`) runs `npm run build` → GitHub Pages.
-- **Gotcha**: the `github-pages` environment restricts deploy branches. `main` must be in its
-  deployment-branch-policies or the deploy job is rejected ("Branch main is not allowed to deploy").
-  Fixed June 2026 by adding `main`; if deploys start failing at the deploy step, check this first.
+- **Gotcha**: if the deploy job is rejected with "Branch main is not allowed to deploy", the
+  `github-pages` environment's deployment-branch-policies is missing `main` — add it there.
 - Verify live after deploy: `curl -s https://zhifei.li/ | grep <marker>` and check the Actions run.
 
 ## Notes
