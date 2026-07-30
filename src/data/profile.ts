@@ -37,7 +37,9 @@ export const profile = {
     'Systems support for emerging AI applications',
   ],
   news: [
+    { date: 'Jul 2026', text: 'SkyNomad accepted to NSDI 2027.' },
     { date: 'May 2026', text: 'LEANN received the Best Paper Award at MLSys 2026.' },
+    { date: 'Apr 2026', text: 'FrontierCS accepted to ICML 2026.' },
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
     { date: 'Fall 2026', text: 'Will start a CS PhD at Princeton University, advised by Tri Dao and Ravi Netravali.' },
     { date: 'Aug 2025', text: 'Received CCF Elite Collegiate Award (<100 recipients nationally).' },
@@ -111,24 +113,33 @@ export const profile = {
 
 export const publications = [
   {
+    year: 2027,
+    title: 'SkyNomad: On Using Multi-Region Spot Instances to Minimize AI Batch Job Cost',
+    authors:
+      'Zhifei Li*, Tian Xia*, Ziming Mao, Zihan Zhou, Ethan J. Jackson, Jamison Kerney, Zhanghao Wu, Pratik Mishra, Yi Xu, Yifan Qiao, Ion Stoica',
+    venue: 'NSDI 2027',
+    note: 'To appear',
+    paperUrl: 'https://arxiv.org/abs/2601.06520',
+    featured: true,
+  },
+  {
     year: 2026,
     title: 'LEANN: A Low-Storage Vector Index for Personal Devices',
     authors:
       'Yichuan Wang, Zhifei Li, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez',
     venue: 'MLSys 2026',
-    note: 'To appear',
     honor: 'Best Paper Award',
     paperUrl: 'https://arxiv.org/abs/2506.08276',
     featured: true,
   },
   {
     year: 2026,
-    title: 'SkyNomad: Cost-Effective Multi-Region Scheduling for Deadline-Sensitive Workloads on Spot Instances',
-    authors: 'Zhifei Li*, Tian Xia*, and others, Ion Stoica',
-    venue: 'NSDI 2026',
-    note: 'In submission',
-    paperUrl: 'https://arxiv.org/abs/2601.06520',
-    featured: true,
+    title: 'SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference',
+    authors:
+      'Tian Xia, Ziming Mao, Jamison Kerney, Ethan J. Jackson, Zhifei Li, Jiarong Xing, Scott Shenker, Ion Stoica',
+    venue: 'EuroSys 2026',
+    paperUrl: 'https://arxiv.org/abs/2505.24095',
+    featured: false,
   },
   {
     year: 2026,
@@ -136,8 +147,17 @@ export const publications = [
     authors:
       'Qiuyang Mang*, Wenhao Chai*, Zhifei Li*, Huanzhi Mao*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung',
     venue: 'ICML 2026',
-    note: 'To appear',
     paperUrl: 'https://arxiv.org/abs/2512.15699',
+    featured: true,
+  },
+  {
+    year: 2026,
+    title: 'PixelRAG: Web Screenshots Beat Text for Retrieval-Augmented Generation',
+    authors:
+      'Yichuan Wang, Zhifei Li, Zirui Wang, Paul Teiletche, Lesheng Jin, Matei Zaharia, Joseph E. Gonzalez, Sewon Min',
+    venue: 'arXiv',
+    note: 'Preprint',
+    paperUrl: 'https://arxiv.org/abs/2606.28344',
     featured: true,
   },
   {
@@ -148,6 +168,6 @@ export const publications = [
     venue: 'arXiv',
     note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2510.06189',
-    featured: true,
+    featured: false,
   },
 ] as const;
