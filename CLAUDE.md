@@ -1,7 +1,8 @@
 # CLAUDE.md
 
 Personal website for **Zhifei Li** (ML systems researcher), served at **zhifei.li**.
-Astro 6, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
+Astro 7, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
+Node `>=22.12.0` (Astro 7 floor). TypeScript stays on 6 — `@astrojs/check` rejects 7.
 
 ## Commands
 
@@ -70,12 +71,10 @@ Drawn from the ML-systems + builder identity. Deliberately avoids the cream/terr
 
 ## Deploy
 
-- **Two remotes, and only one of them is the site.** `public` → `andylizf/andylizf.github.io` is
-  what serves zhifei.li; `origin` → `andylizf/andylizf.github.io-archive` is a private archive with
-  Pages disabled (its deploy job always fails — that failure is expected, not a regression).
-  Pushing only to `origin` looks successful and changes nothing on the live site. Publish with
-  `git push public HEAD:main`, and keep archive-only commits (e.g. local hook logs) out of `public`
-  by cherry-picking rather than pushing the whole branch.
+- `origin` → `andylizf/andylizf.github.io` is the only remote, and it serves zhifei.li.
+  (Historical trap, resolved 2026-08-05: `origin` used to point at a private
+  `andylizf.github.io-archive` with Pages disabled, so pushes "succeeded" while the live site
+  never moved. That remote is gone and its workflow is disabled — don't re-add it.)
 - Push to `main` → GitHub Actions (`.github/workflows/`) runs `npm run build` → GitHub Pages.
 - The workflow also runs on a daily `schedule`, which is what refreshes the open-source star counts.
   It passes `GITHUB_TOKEN` to the build so those lookups get the 5000 req/h authenticated limit.
