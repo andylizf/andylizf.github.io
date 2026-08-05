@@ -26,3 +26,6 @@ node_modules
 # Ignore local Claude Code settings (keep committed skills)
 .claude/settings.local.json
 .claude/settings.json
+
+# Local scratch (screenshots, preview logs)
+tmp/

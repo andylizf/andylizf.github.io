@@ -3,6 +3,9 @@ name: Build and Deploy (GitHub Pages)
 on:
   push:
     branches: [master, main]
+  # Rebuild daily so the build-time GitHub star counts stay current.
+  schedule:
+    - cron: '17 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,6 +36,10 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          # Authenticated star lookups: 5000 req/h instead of a shared-runner
+          # 60 that is routinely exhausted. Falls back to profile.ts if absent.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

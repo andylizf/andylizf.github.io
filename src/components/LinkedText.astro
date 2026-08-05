@@ -1,0 +1,20 @@
+---
+// Renders a plain string with known entities turned into links (see lib/linkify).
+// Emits an inline fragment, so the caller keeps control of the wrapping element.
+import { linkify } from '../lib/linkify';
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+const parts = linkify(text);
+---
+
+{parts.map((part) =>
+  part.url ? (
+    <a class="entity-link" href={part.url} target="_blank" rel="noreferrer">{part.text}</a>
+  ) : (
+    part.text
+  ),
+)}

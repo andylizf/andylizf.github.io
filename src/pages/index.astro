@@ -1,7 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Publication from '../components/Publication.astro';
+import LinkedText from '../components/LinkedText.astro';
 import { getCollection } from 'astro:content';
 import { profile, publications } from '../data/profile';
+import { fetchStars, formatStars, formatStarsCoarse } from '../lib/github';
+
+// Resolved at build time; the daily deploy run is what keeps these fresh.
+const openSource = await Promise.all(
+  profile.openSource.map(async (project) => ({
+    ...project,
+    stars: await fetchStars(project.repo, project.stars),
+  })),
+);
+const contributedStars = openSource.reduce((total, project) => total + project.stars, 0);
 
 const insights = (await getCollection('insights'))
   .filter((post) => !post.data.draft && post.data.date <= new Date())
@@ -19,12 +31,6 @@ function awardRank(date: string): number {
   return Number(match[2]) * 12 + month;
 }
 const sortedAwards = [...profile.awards].sort((a, b) => awardRank(b.date) - awardRank(a.date));
-
-// Split an author string, keeping any trailing equal-contribution mark attached
-// so "Zhifei Li*" stays a single highlighted unit rather than orphaning the "*".
-function authorParts(authors: string) {
-  return authors.split(/(Zhifei Li\*?)/g);
-}
 ---
 
 <BaseLayout
@@ -37,7 +43,7 @@ function authorParts(authors: string) {
         <p class="eyebrow">ML Systems · Training + Inference Infrastructure</p>
         <h1>Zhifei Li</h1>
         <p class="lead">{profile.headline}</p>
-        <p class="body">{profile.summary}</p>
+        <p class="body"><LinkedText text={profile.summary} /></p>
         <div class="cta-row">
           <a class="button button-primary" href="/publications">View publications</a>
           <a class="button" href="/cv/andylizf_cv.pdf">Open CV</a>
@@ -60,11 +66,11 @@ function authorParts(authors: string) {
           </div>
           <div>
             <dt>Advised by</dt>
-            <strong>Tri Dao · Ravi Netravali</strong>
+            <strong><LinkedText text="Tri Dao" /> · <LinkedText text="Ravi Netravali" /></strong>
           </div>
           <div>
             <dt>Previously</dt>
-            <strong>Sky Computing Lab · UC Berkeley</strong>
+            <strong><LinkedText text="Sky Computing Lab" /> · <LinkedText text="UC Berkeley" /></strong>
           </div>
           <div>
             <dt>Focus</dt>
@@ -72,7 +78,7 @@ function authorParts(authors: string) {
           </div>
           <div>
             <dt>Builder</dt>
-            <strong>30k★ contributed · 40k+ users</strong>
+            <strong>{formatStarsCoarse(contributedStars)}★ contributed · 40k+ users</strong>
           </div>
         </dl>
       </aside>
@@ -90,7 +96,7 @@ function authorParts(authors: string) {
               <li>{interest}</li>
             ))}
           </ul>
-          <p class="research-note">{profile.researchSummary}</p>
+          <p class="research-note"><LinkedText text={profile.researchSummary} /></p>
         </section>
 
         <section class="block">
@@ -102,36 +108,7 @@ function authorParts(authors: string) {
             <a class="more" href="/publications">All publications</a>
           </div>
           <div class="pub-list">
-            {selectedPublications.map((publication) => (
-              <article class="pub-item">
-                <div class="pub-tags">
-                  <span class="venue-chip">{publication.venue}</span>
-                  {publication.honor && <span class="honor-chip">{publication.honor}</span>}
-                  {publication.note && <span class="note-chip">{publication.note}</span>}
-                </div>
-                <h3>
-                  {publication.paperUrl
-                    ? <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title}</a>
-                    : publication.title}
-                </h3>
-                <p class="pub-authors">
-                  {authorParts(publication.authors).map((part) =>
-                    /^Zhifei Li/.test(part) ? (
-                      <span class="me">Zhifei Li{part.endsWith('*') && (
-                        <sup class="eq" aria-label="equal contribution">*</sup>
-                      )}</span>
-                    ) : (
-                      part
-                    ),
-                  )}
-                </p>
-                {publication.paperUrl && (
-                  <div class="pub-meta">
-                    <a href={publication.paperUrl} target="_blank" rel="noreferrer">Paper</a>
-                  </div>
-                )}
-              </article>
-            ))}
+            {selectedPublications.map((publication) => <Publication publication={publication} />)}
           </div>
           <p class="meta research-note">* denotes equal contribution.</p>
         </section>
@@ -140,10 +117,21 @@ function authorParts(authors: string) {
           <p class="eyebrow">Builder lens</p>
           <h2>Open source</h2>
           <div class="oss-list">
-            {profile.openSource.map((project) => (
+            {openSource.map((project) => (
               <article class="oss-item">
                 <h3>
                   <a href={project.url} target="_blank" rel="noreferrer">{project.name}</a>
+                  <a
+                    class="star-chip"
+                    href={`${project.url}/stargazers`}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={`${project.stars.toLocaleString('en-US')} stars on GitHub`}
+                  >
+                    <span aria-hidden="true">★</span>
+                    {formatStars(project.stars)}
+                    <span class="sr-only"> stars on GitHub</span>
+                  </a>
                 </h3>
                 <p>{project.summary}</p>
                 <ul class="oss-metrics">
@@ -184,7 +172,7 @@ function authorParts(authors: string) {
             {profile.news.map((item) => (
               <li>
                 <time>{item.date}</time>
-                <p>{item.text}</p>
+                <p><LinkedText text={item.text} /></p>
               </li>
             ))}
           </ul>
@@ -210,7 +198,7 @@ function authorParts(authors: string) {
           <p class="eyebrow">Community</p>
           <h2>Service</h2>
           <ul class="service">
-            {profile.service.map((item) => (<li>{item}</li>))}
+            {profile.service.map((item) => (<li><LinkedText text={item} /></li>))}
           </ul>
         </section>
       </aside>

@@ -1,0 +1,68 @@
+---
+// One publication entry. Shared by the home page and /publications so the two
+// never drift apart.
+interface Props {
+  publication: {
+    title: string;
+    authors: string;
+    venue: string;
+    venueUrl?: string;
+    note?: string;
+    honor?: string;
+    paperUrl?: string;
+    codeUrl?: string;
+    projectUrl?: string;
+  };
+}
+
+const { publication } = Astro.props;
+
+// Split the author string, keeping any trailing equal-contribution mark attached
+// so "Zhifei Li*" stays a single highlighted unit rather than orphaning the "*".
+const authorParts = publication.authors.split(/(Zhifei Li\*?)/g);
+
+const resourceLinks = [
+  { label: 'Paper', url: publication.paperUrl },
+  { label: 'Code', url: publication.codeUrl },
+  { label: 'Project', url: publication.projectUrl },
+].filter((link): link is { label: string; url: string } => Boolean(link.url));
+---
+
+<article class="pub-item">
+  <div class="pub-tags">
+    {publication.venueUrl ? (
+      <a class="venue-chip" href={publication.venueUrl} target="_blank" rel="noreferrer">
+        {publication.venue}
+      </a>
+    ) : (
+      <span class="venue-chip">{publication.venue}</span>
+    )}
+    {publication.honor && <span class="honor-chip">{publication.honor}</span>}
+    {publication.note && <span class="note-chip">{publication.note}</span>}
+  </div>
+  <h3>
+    {publication.paperUrl ? (
+      <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title}</a>
+    ) : (
+      publication.title
+    )}
+  </h3>
+  <p class="pub-authors">
+    {authorParts.map((part) =>
+      /^Zhifei Li/.test(part) ? (
+        <span class="me">Zhifei Li{part.endsWith('*') && (
+          <sup class="eq" aria-label="equal contribution">*</sup>
+        )}</span>
+      ) : (
+        part
+      ),
+    )}
+  </p>
+  {resourceLinks.length > 0 && (
+    <div class="pub-meta">
+      {resourceLinks.map((link) => (
+        <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>
+      ))}
+    </div>
+  )}
+</article>

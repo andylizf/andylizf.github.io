@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Publication from '../components/Publication.astro';
 import { publications } from '../data/profile';
 
 const groupedPublications = Object.entries(
@@ -9,10 +10,6 @@ const groupedPublications = Object.entries(
     return groups;
   }, {}),
 ).sort((a, b) => Number(b[0]) - Number(a[0]));
-
-function authorParts(authors: string) {
-  return authors.split(/(Zhifei Li\*?)/g);
-}
 ---
 
 <BaseLayout
@@ -32,36 +29,7 @@ function authorParts(authors: string) {
         <span class="count">{items.length} {items.length === 1 ? 'entry' : 'entries'}</span>
       </div>
       <div class="pub-list">
-        {items.map((publication) => (
-          <article class="pub-item">
-            <div class="pub-tags">
-              <span class="venue-chip">{publication.venue}</span>
-              {publication.honor && <span class="honor-chip">{publication.honor}</span>}
-              {publication.note && <span class="note-chip">{publication.note}</span>}
-            </div>
-            <h3>
-              {publication.paperUrl
-                ? <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title}</a>
-                : publication.title}
-            </h3>
-            <p class="pub-authors">
-              {authorParts(publication.authors).map((part) =>
-                /^Zhifei Li/.test(part) ? (
-                  <span class="me">Zhifei Li{part.endsWith('*') && (
-                    <sup class="eq" aria-label="equal contribution">*</sup>
-                  )}</span>
-                ) : (
-                  part
-                ),
-              )}
-            </p>
-            {publication.paperUrl && (
-              <div class="pub-meta">
-                <a href={publication.paperUrl} target="_blank" rel="noreferrer">Paper</a>
-              </div>
-            )}
-          </article>
-        ))}
+        {items.map((publication) => <Publication publication={publication} />)}
       </div>
     </section>
   ))}

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkedText from '../components/LinkedText.astro';
 import { profile } from '../data/profile';
 ---
 
@@ -16,8 +17,8 @@ import { profile } from '../data/profile';
     <div class="about-grid">
       <div class="content-stack">
         <section class="block">
-          <p class="lead">{profile.summary}</p>
-          <p class="research-note">{profile.researchSummary}</p>
+          <p class="lead"><LinkedText text={profile.summary} /></p>
+          <p class="research-note"><LinkedText text={profile.researchSummary} /></p>
         </section>
 
         <section class="block">
@@ -31,14 +32,14 @@ import { profile } from '../data/profile';
         <section class="block">
           <p class="eyebrow">Builder lens</p>
           <h2>Systems ideas into tools people use</h2>
-          <p>{profile.builderSummary}</p>
+          <p><LinkedText text={profile.builderSummary} /></p>
           <p>
             On <a href="https://github.com/skypilot-org/skypilot" target="_blank" rel="noreferrer">SkyPilot</a>,
             I built the High Availability Controller for SkyServe — the layer that keeps model serving
             online across node and region failures — now adopted by startups including Hypermode. On
-            <a href="https://github.com/yichuan-w/LEANN" target="_blank" rel="noreferrer">LEANN</a>, I led the
+            <a href="https://github.com/StarTrail-org/LEANN" target="_blank" rel="noreferrer">LEANN</a>, I led the
             push from research prototype to a low-storage vector index that runs on personal devices, with
-            tens of thousands of downloads and a Best Paper Award at MLSys 2026.
+            tens of thousands of downloads and a Best Paper Award at <LinkedText text="MLSys 2026" />.
           </p>
         </section>
       </div>
@@ -46,19 +47,19 @@ import { profile } from '../data/profile';
       <aside class="meta-rail">
         <div>
           <p class="block-head">Incoming</p>
-          <p>CS PhD, Princeton University · Fall 2026</p>
+          <p>CS PhD, <LinkedText text="Princeton University" /> · Fall 2026</p>
         </div>
         <div>
           <p class="block-head">Advised by</p>
-          <p>Tri Dao · Ravi Netravali</p>
+          <p><LinkedText text="Tri Dao" /> · <LinkedText text="Ravi Netravali" /></p>
         </div>
         <div>
           <p class="block-head">Previously</p>
-          <p>Visiting Student Researcher, Sky Computing Lab, UC Berkeley</p>
+          <p>Visiting Student Researcher, <LinkedText text="Sky Computing Lab" />, <LinkedText text="UC Berkeley" /></p>
         </div>
         <div>
           <p class="block-head">Education</p>
-          <p>B.S. in Computer Science, Turing Honors Class, Renmin University of China</p>
+          <p>B.S. in Computer Science, Turing Honors Class, <LinkedText text="Renmin University of China" /></p>
         </div>
         <div>
           <p class="block-head">Elsewhere</p>

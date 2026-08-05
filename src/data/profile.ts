@@ -27,7 +27,7 @@ export const profile = {
     },
     {
       label: 'Email',
-      url: 'mailto:zhifei.li@berkeley.edu',
+      url: 'mailto:andylizf@gmail.com',
     },
   ],
   researchInterests: [
@@ -93,25 +93,33 @@ export const profile = {
     'Head Teaching Assistant, Introduction to Computer Systems (Fall 2024 and Spring 2025)',
     'President, RUC Computer Association (Jul 2024 to Jul 2025)',
   ],
+  // `stars` is the last known count — a fallback for when the build-time GitHub
+  // fetch is rate-limited or offline, so the chip never renders blank.
   openSource: [
     {
       name: 'SkyPilot',
+      repo: 'skypilot-org/skypilot',
       url: 'https://github.com/skypilot-org/skypilot',
+      stars: 10449,
       metrics: ['Top 10 contributor', '50+ PRs merged', '30k+ LOC'],
       summary:
         'Built the High Availability Controller for SkyServe, later adopted by startups including Hypermode.',
     },
     {
       name: 'LEANN',
-      url: 'https://github.com/yichuan-w/LEANN',
+      repo: 'StarTrail-org/LEANN',
+      url: 'https://github.com/StarTrail-org/LEANN',
+      stars: 12761,
       metrics: ['40k+ downloads', '600k+ reach', 'research → production'],
       summary:
         'Led the research-to-production translation of a low-storage vector index for personal devices.',
     },
     {
       name: 'PixelRAG',
+      repo: 'StarTrail-org/PixelRAG',
       url: 'https://github.com/StarTrail-org/PixelRAG',
-      metrics: ['9k+ stars', 'Top contributor', 'live index of 8.28M pages'],
+      stars: 9132,
+      metrics: ['10k+ downloads', 'Top contributor', 'live index of 8.28M pages'],
       summary:
         'Built the screenshot renderer and the hosted search service behind pixelrag.ai, taking the paper pipeline to a public API and pip package.',
     },
@@ -125,6 +133,7 @@ export const publications = [
     authors:
       'Zhifei Li*, Tian Xia*, Ziming Mao, Zihan Zhou, Ethan J. Jackson, Jamison Kerney, Zhanghao Wu, Pratik Mishra, Yi Xu, Yifan Qiao, Ion Stoica',
     venue: 'NSDI 2027',
+    venueUrl: 'https://www.usenix.org/conference/nsdi27',
     note: 'To appear',
     paperUrl: 'https://arxiv.org/abs/2601.06520',
     featured: true,
@@ -135,8 +144,10 @@ export const publications = [
     authors:
       'Yichuan Wang, Zhifei Li, Shu Liu, Yongji Wu, Ziming Mao, Yilong Zhao, Xiao Yan, Zhiying Xu, Yang Zhou, Ion Stoica, Sewon Min, Matei Zaharia, Joseph E. Gonzalez',
     venue: 'MLSys 2026',
+    venueUrl: 'https://mlsys.org/Conferences/2026',
     honor: 'Best Paper Award',
     paperUrl: 'https://arxiv.org/abs/2506.08276',
+    codeUrl: 'https://github.com/StarTrail-org/LEANN',
     featured: true,
   },
   {
@@ -145,6 +156,7 @@ export const publications = [
     authors:
       'Tian Xia, Ziming Mao, Jamison Kerney, Ethan J. Jackson, Zhifei Li, Jiarong Xing, Scott Shenker, Ion Stoica',
     venue: 'EuroSys 2026',
+    venueUrl: 'https://2026.eurosys.org/',
     paperUrl: 'https://arxiv.org/abs/2505.24095',
     featured: false,
   },
@@ -154,7 +166,10 @@ export const publications = [
     authors:
       'Qiuyang Mang*, Wenhao Chai*, Zhifei Li*, Huanzhi Mao*, and others, Ion Stoica, Jingbo Shang, Zhuang Liu, Alvin Cheung',
     venue: 'ICML 2026',
+    venueUrl: 'https://icml.cc/Conferences/2026',
     paperUrl: 'https://arxiv.org/abs/2512.15699',
+    codeUrl: 'https://github.com/FrontierCS/Frontier-CS',
+    projectUrl: 'https://frontier-cs.org',
     featured: true,
   },
   {
@@ -165,6 +180,8 @@ export const publications = [
     venue: 'arXiv',
     note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2606.28344',
+    codeUrl: 'https://github.com/StarTrail-org/PixelRAG',
+    projectUrl: 'https://pixelrag.ai',
     featured: true,
   },
   {
