@@ -1,8 +1,7 @@
 # CLAUDE.md
 
 Personal website for **Zhifei Li** (ML systems researcher), served at **zhifei.li**.
-Astro 7, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
-Node `>=22.12.0` (Astro 7 floor). TypeScript stays on 6 — `@astrojs/check` rejects 7.
+Astro, no UI framework, hand-written CSS. Everything lives under `src/` and `public/`.
 
 ## Commands
 
@@ -12,6 +11,9 @@ npm run build     # production build to dist/  — run before every commit
 npm run preview   # serve the built dist/ (what GitHub Pages will ship)
 npm run check     # astro check (type/diagnostics)
 ```
+
+**Don't upgrade TypeScript past 6** — `@astrojs/check` refuses to start on 7
+(`assertCompatibleTypeScript` throws), so `npm run check` dies. Everything else can move freely.
 
 ## Architecture
 
@@ -71,10 +73,6 @@ Drawn from the ML-systems + builder identity. Deliberately avoids the cream/terr
 
 ## Deploy
 
-- `origin` → `andylizf/andylizf.github.io` is the only remote, and it serves zhifei.li.
-  (Historical trap, resolved 2026-08-05: `origin` used to point at a private
-  `andylizf.github.io-archive` with Pages disabled, so pushes "succeeded" while the live site
-  never moved. That remote is gone and its workflow is disabled — don't re-add it.)
 - Push to `main` → GitHub Actions (`.github/workflows/`) runs `npm run build` → GitHub Pages.
 - The workflow also runs on a daily `schedule`, which is what refreshes the open-source star counts.
   It passes `GITHUB_TOKEN` to the build so those lookups get the 5000 req/h authenticated limit.
