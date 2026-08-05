@@ -29,3 +29,6 @@ node_modules
 
 # Local scratch (screenshots, preview logs)
 tmp/
+
+# Codex plugin hook debug logs — written into whatever cwd the hook runs in
+hook-logs/
