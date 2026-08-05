@@ -108,6 +108,13 @@ export const profile = {
       summary:
         'Led the research-to-production translation of a low-storage vector index for personal devices.',
     },
+    {
+      name: 'PixelRAG',
+      url: 'https://github.com/StarTrail-org/PixelRAG',
+      metrics: ['9k+ stars', 'Top contributor', 'live index of 8.28M pages'],
+      summary:
+        'Built the screenshot renderer and the hosted search service behind pixelrag.ai, taking the paper pipeline to a public API and pip package.',
+    },
   ],
 } as const;
 
@@ -154,7 +161,7 @@ export const publications = [
     year: 2026,
     title: 'PixelRAG: Web Screenshots Beat Text for Retrieval-Augmented Generation',
     authors:
-      'Yichuan Wang, Zhifei Li, Zirui Wang, Paul Teiletche, Lesheng Jin, Matei Zaharia, Joseph E. Gonzalez, Sewon Min',
+      'Yichuan Wang*, Zhifei Li*, Zirui Wang, Paul Teiletche, Lesheng Jin, Matei Zaharia, Joseph E. Gonzalez, Sewon Min',
     venue: 'arXiv',
     note: 'Preprint',
     paperUrl: 'https://arxiv.org/abs/2606.28344',
