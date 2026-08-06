@@ -7,7 +7,7 @@ export const profile = {
     'I work broadly on machine learning systems, with interests in efficient infrastructure, training and inference systems, and the design of systems for emerging AI workloads.',
   builderSummary:
     'Alongside research, I translate ML systems ideas into infrastructure and tools that people actually use — from a high-availability controller running in production to a vector index with tens of thousands of users.',
-  photo: '/images/profile.png',
+  photo: '/images/profile.jpg',
   links: [
     {
       label: 'Google Scholar',
