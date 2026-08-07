@@ -89,6 +89,7 @@ export const profile = {
     },
   ],
   service: [
+    "MLSys '26 Artifact Evaluation Committee",
     "USENIX ATC '25 Artifact Evaluation Committee",
     'Head Teaching Assistant, Introduction to Computer Systems (Fall 2024 and Spring 2025)',
     'President, RUC Computer Association (Jul 2024 to Jul 2025)',

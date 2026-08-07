@@ -37,6 +37,7 @@ export const entityLinks: Record<string, string> = {
   'ICML 2026': 'https://icml.cc/Conferences/2026',
   'EuroSys 2026': 'https://2026.eurosys.org/',
   "USENIX ATC '25": 'https://www.usenix.org/conference/atc25',
+  "MLSys '26": 'https://mlsys.org/Conferences/2026',
 };
 
 export type LinkPart = { text: string; url?: string };
