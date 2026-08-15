@@ -41,6 +41,33 @@ npm run check     # astro check (type/diagnostics)
   the CV in MyCV does *not* update the site; refreshing this file is a separate, deliberate act,
   and only ever from `CV.typ` — never from an employer-targeted variant.
 
+## His public profiles — this repo is the index
+
+`profile.ts` is the source of truth for the *content*, but the same facts are mirrored on
+surfaces this repo does not build. They drift silently and independently, and the drift is only
+ever discovered by someone reading a stale claim. **When a fact about him changes, walk this
+table** — it is the checklist, kept here because this repo is the one place that already holds
+the canonical version of every field.
+
+| Surface | Holds | How to update |
+|---|---|---|
+| **zhifei.li** (this repo) | Bio, publications, awards, news, open-source, links | Edit `src/data/profile.ts`, push |
+| **CV** | Same facts, print form | Private repo `andylizf/MyCV` → `CV.typ`; `./build.sh`; see its `CLAUDE.md`. The published PDF here is a build artifact of it |
+| **GitHub profile README** (`andylizf/andylizf`) | Short bio, top 4 papers, top 3 repos, contact | Edit that repo directly |
+| **GitHub sidebar** (`andylizf`) | `bio`, `company`, `location`, `blog`, `email`, `twitter_username`, pinned repos | `gh api -X PATCH user -f <field>=...`; pinned repos via GraphQL |
+| **Google Scholar** (`user=7MiEsfAAAAAJ`) | Publication venues, affiliation, homepage | Manual, requires Google login. **Venues do not auto-update** — an accepted paper keeps showing `arXiv preprint` until edited by hand |
+| **LinkedIn** (`in/andylizf`) | Headline, position, education | Manual |
+
+**Which surfaces a given change touches:**
+
+- **Paper accepted** → `profile.ts` (`venue`, `note`, `honor`) · Scholar venue string · GitHub README paper list · CV. Scholar is the one that gets forgotten and the one academics actually read.
+- **New open-source project or a big star milestone** → `profile.ts` `openSource` · GitHub pinned repos · GitHub README · CV.
+- **Affiliation / location change** → GitHub `company` + `location` · Scholar affiliation · CV header · LinkedIn.
+- **Contact address change** → GitHub `email` field *and* the README's contact line (these are two different places and have drifted apart before) · `profile.ts` links · CV header.
+
+Keep the contact address identical everywhere. The canonical public one is `andylizf@gmail.com`;
+`zhifei.li@berkeley.edu` is retired and must not be reintroduced anywhere.
+
 ## Editing conventions
 
 - **Add a publication**: append to `publications` in `profile.ts`. Fields: `year`, `title`, `authors`
