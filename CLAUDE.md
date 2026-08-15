@@ -33,6 +33,13 @@ npm run check     # astro check (type/diagnostics)
 - `src/styles/global.css` — the entire design system (see below).
 - `public/` — served at site root: `public/images/`, `public/cv/andylizf_cv.pdf`, `public/CNAME`
   (custom domain). Reference as `/images/...`, `/cv/...`.
+- `public/cv/andylizf_cv.pdf` — **a build artifact, not a source.** It is compiled from `CV.typ`
+  in the private `andylizf/MyCV` repo (`./build.sh CV` → `out/CV.pdf`, then copy here). Never
+  hand-edit the PDF, and **never add Typst CV source to this repo** — the site previously built
+  from a stale fork of the CV, which is how a `Raised $300K seed funding` line (funding that
+  never happened) stayed published for months after it was removed from the real CV. Updating
+  the CV in MyCV does *not* update the site; refreshing this file is a separate, deliberate act,
+  and only ever from `CV.typ` — never from an employer-targeted variant.
 
 ## Editing conventions
 
