@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Zhifei Li',
-  headline: 'Incoming Computer Science PhD at Princeton University, Fall 2026',
+  headline: 'Computer Science PhD student at Princeton University',
   summary:
-    "I'm an incoming PhD student in Computer Science at Princeton University, starting in Fall 2026, where I will be advised by Tri Dao and Ravi Netravali. I previously worked as a Visiting Student Researcher at the Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
+    "I'm a PhD student in Computer Science at Princeton University, advised by Tri Dao and Ravi Netravali. I previously worked as a Visiting Student Researcher at the Sky Computing Lab at UC Berkeley, advised by Ion Stoica, and also collaborated with Joseph E. Gonzalez and Matei Zaharia. I completed my B.S. in Computer Science (Turing Honors Class) at Renmin University of China.",
   researchSummary:
     'I work broadly on machine learning systems, with interests in efficient infrastructure, training and inference systems, and the design of systems for emerging AI workloads.',
   builderSummary:
@@ -37,11 +37,11 @@ export const profile = {
     'Systems support for emerging AI applications',
   ],
   news: [
+    { date: 'Sep 2026', text: 'Started a CS PhD at Princeton University, advised by Tri Dao and Ravi Netravali.' },
     { date: 'Jul 2026', text: 'SkyNomad accepted to NSDI 2027.' },
     { date: 'May 2026', text: 'LEANN received the Best Paper Award at MLSys 2026.' },
     { date: 'Apr 2026', text: 'FrontierCS accepted to ICML 2026.' },
     { date: 'Feb 2026', text: 'LEANN accepted to MLSys 2026.' },
-    { date: 'Fall 2026', text: 'Will start a CS PhD at Princeton University, advised by Tri Dao and Ravi Netravali.' },
     { date: 'Aug 2025', text: 'Received CCF Elite Collegiate Award (<100 recipients nationally).' },
     { date: 'Jul 2025', text: 'Joined UC Berkeley Sky Computing Lab as a Visiting Student Researcher.' },
     { date: 'May 2025', text: "Received Dean's Scholarship, Gaoling School of AI." },
