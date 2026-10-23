@@ -22,6 +22,10 @@ export const profile = {
       url: 'https://github.com/andylizf',
     },
     {
+      label: 'X',
+      url: 'https://x.com/andylizf',
+    },
+    {
       label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/andylizf',
     },
